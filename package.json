@@ -5,5 +5,8 @@
   "main": "index.js",
   "repository": "tbc",
   "author": "Daniel Bush",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "react": "^15.5.4"
+  }
 }
