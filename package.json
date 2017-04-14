@@ -7,6 +7,7 @@
   "author": "Daniel Bush",
   "license": "MIT",
   "dependencies": {
-    "react": "^15.5.4"
+    "react": "^15.5.4",
+    "webpack": "^2.3.3"
   }
 }
