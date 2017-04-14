@@ -1,0 +1,9 @@
+{
+  "name": "2br-react-space",
+  "version": "0.0.1",
+  "description": "2br spaces",
+  "main": "index.js",
+  "repository": "tbc",
+  "author": "Daniel Bush",
+  "license": "MIT"
+}
