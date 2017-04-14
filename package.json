@@ -7,11 +7,13 @@
   "author": "Daniel Bush",
   "license": "MIT",
   "dependencies": {
-    "react": "^15.5.4",
-    "webpack": "^2.3.3",
-    "webpack-dev-server": "^2.4.2"
+    "react": "^15.5.4"
   },
   "scripts": {
     "webpack": "webpack --config webpack.config.js"
+  },
+  "devDependencies": {
+    "webpack": "^2.3.3",
+    "webpack-dev-server": "^2.4.2"
   }
 }
