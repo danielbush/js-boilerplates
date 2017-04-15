@@ -6,7 +6,6 @@
     color: green;
 }
 
-/* autoprefixer should prefix this: */
 .flex {
     display: flex;
     color: var(--red);
