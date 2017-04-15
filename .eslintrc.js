@@ -18,6 +18,7 @@ module.exports = {
     fetch: true
   },
   rules: {
+    'space-infix-ops': [ 'error' ],
     quotes: [ 2, 'single', 'avoid-escape' ],
     'keyword-spacing': 2,
     'linebreak-style': [ 2, 'unix' ],
