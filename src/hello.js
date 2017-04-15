@@ -5,8 +5,8 @@ import hello from './styles/hello.css';
 class HelloWorld extends React.Component {
   render () {
     return <div>
-      <h1 className="hello" >green hello world</h1>
-      <div className="flex" >flex <a className="flex_foo" >box</a></div>
+      <h1 className={hello.hello} >green hello world</h1>
+      <div className={hello.flex} >flex <a className={hello.flex_foo} >box</a></div>
     </div>;
   }
 }
