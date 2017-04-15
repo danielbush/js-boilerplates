@@ -3,6 +3,7 @@ const path = require('path');
 module.exports = {
   devtool: '#inline-source-map',
   entry: {
+    hello: [ path.join(__dirname, 'src/hello.js') ],
     main: [ path.join(__dirname, 'src/index.js') ]
   },
   output: {
@@ -27,7 +28,13 @@ module.exports = {
         test: /\.css$/,
         use: [
           { loader: 'style-loader' },
-          { loader: 'css-loader' },
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1
+            }
+          },
+          { loader: 'postcss-loader' }
         ]
       }
     ]
