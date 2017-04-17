@@ -7,6 +7,7 @@
   "author": "Daniel Bush",
   "license": "MIT",
   "dependencies": {
+    "classnames": "^2.2.5",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   },
