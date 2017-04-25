@@ -1,3 +1,4 @@
+require('dotenv').config();
 const path = require('path');
 
 module.exports = {
@@ -13,7 +14,7 @@ module.exports = {
   },
   devServer: {
     contentBase: path.join(__dirname, 'public'),
-    port: 8000
+    port: process.env.PORT
   },
   module: {
     rules: [
