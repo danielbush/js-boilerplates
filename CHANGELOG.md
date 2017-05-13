@@ -14,7 +14,7 @@ This includes initial work version 0.0.1.
 
 - webpack 2
   - should also give us tree-shaking (apparently)
-- style and css-loaders
+- style-loader and css-loader
   - note that these use some postcss plugins already
   - `css-loader` uses `postcss-modules-*`
 - `cssnext`
