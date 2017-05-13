@@ -10,14 +10,22 @@
     "dotenv": "^4.0.0"
   },
   "scripts": {
-    "start": "node src/index.js",
-    "test": "mocha test/index.js"
+    "start": "yarn run build && node lib/index.js",
+    "test": "mocha test/index.js",
+    "build": "babel -s --out-dir lib src",
+    "deploy": "node -r dotenv/config node_modules/.bin/serverless deploy"
   },
   "devDependencies": {
-    "babel-eslint": "^7.2.3",
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-eslint": "^7.2.2",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
     "chai": "^4.1.0",
     "eslint": "^3.19.0",
     "mocha": "^3.5.0",
+    "serverless": "^1.13.1",
     "sinon": "^2.4.1",
     "sinon-chai": "^2.12.0"
   }
