@@ -1,24 +1,54 @@
 {
   "name": "2br-react-space",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "2br spaces",
   "main": "lib/index.js",
   "repository": "tbc",
   "author": "Daniel Bush",
   "license": "MIT",
   "dependencies": {
-    "dotenv": "^4.0.0"
+    "babel-polyfill": "^6.23.0"
   },
   "scripts": {
-    "start": "node src/index.js",
-    "test": "mocha test/index.js"
+    "lint": "eslint src",
+    "flow": "flow",
+    "check": "yarn run flow && yarn run lint",
+    "bundle": "rm build/*; webpack && uglifyjs -o build/dist.js build/main.js && cat build/dist.js | gzip - >build/dist.js.gz",
+    "build": "babel -s --out-dir lib src",
+    "start": "yarn run build && node lib/index.js",
+    "test": "mocha test/index.js",
+    "flow:init": "flow init",
+    "flow:start": "flow status",
+    "flow:stop": "flow stop",
+    "webpack": "webpack --config webpack.config.js",
+    "prepublish": "in-publish && { echo 'Prepublish:' && yarn run build; } || not-in-publish",
+    "version": "version-changelog CHANGELOG.md && changelog-verify CHANGELOG.md && git add CHANGELOG.md"
   },
   "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
     "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-stage-2": "^6.24.1",
     "chai": "^4.1.0",
+    "changelog-verify": "^1.0.4",
+    "dotenv": "^4.0.0",
     "eslint": "^3.19.0",
+    "eslint-plugin-flowtype": "^2.33.0",
+    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-react": "^7.0.1",
+    "flow-bin": "^0.46.0",
+    "in-publish": "^2.0.0",
     "mocha": "^3.5.0",
     "sinon": "^2.4.1",
     "sinon-chai": "^2.12.0"
-  }
+    "version-changelog": "^2.0.1"
+  },
+  "peerDependencies": {}
 }

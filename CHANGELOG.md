@@ -2,9 +2,19 @@
 
 ## [Unreleased]
 
+## [2.0.0] - 2017-05-20
+
 ### Added
 
+- flow
+  - example showing `props:` in es6 components
+- `yarn run check` - runs flow and linting
+- np - use `np --no-publish`
+- `version` run-script (hook) to update changelog for np
+- added eslint default for react - eslint-plugin-react
+
 ### Changed
+
 
 ### Fixed
 
@@ -63,3 +73,7 @@ This includes initial work version 0.0.1.
     really capable of changing the way people structure their CSS."
   - https://github.com/css-modules/css-modules-loader-core/pull/28#issuecomment-142857169
 
+
+
+[Unreleased]: https://github.com/danielbush/react-boilerplate/compare/v2.0.0...HEAD
+[2.0.0]: https://github.com/danielbush/react-boilerplate/tree/v2.0.0

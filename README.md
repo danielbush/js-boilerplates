@@ -1,9 +1,8 @@
-
-# Node template
-
-* no babel
-* code lives in `src/`
-* `require` is assumed
+# Project title
 
 ## Synopsis
 
+    yarn run check # flow and linting
+    yarn run start # dev server
+
+    np --no-publish patch|minor|major

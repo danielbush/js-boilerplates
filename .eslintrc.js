@@ -17,7 +17,16 @@ module.exports = {
     module: true,
     fetch: true
   },
+  plugins: [
+    'flowtype',
+    'import'
+  ],
+  extends: [
+    // https://www.npmjs.com/package/eslint-plugin-flowtype#eslint-plugin-flowtype-configuration
+    'plugin:flowtype/recommended'
+  ],
   rules: {
+    'import/no-unresolved': [ 2, { commonjs: true, amd: true } ],
     'space-infix-ops': [ 'error' ],
     quotes: [ 2, 'single', 'avoid-escape' ],
     'keyword-spacing': 2,
