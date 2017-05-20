@@ -17,6 +17,13 @@ module.exports = {
     module: true,
     fetch: true
   },
+  plugins: [
+    'react'
+  ],
+  extends: [
+    // https://www.npmjs.com/package/eslint-plugin-react#recommended
+    'plugin:react/all'
+  ],
   rules: {
     'space-infix-ops': [ 'error' ],
     quotes: [ 2, 'single', 'avoid-escape' ],
@@ -32,6 +39,10 @@ module.exports = {
     'no-mixed-spaces-and-tabs': 2,
     semi: [ 2, 'always' ],
     strict: [ 2, 'safe' ],
-    'no-undef': [ 2, { typeof: true } ]
+    'no-undef': [ 2, { typeof: true } ],
+
+    // Modification to plugin:react/all
+    'react/jsx-indent': [2, 2],
+    'react/jsx-no-literals': 0
   }
 };

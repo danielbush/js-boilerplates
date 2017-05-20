@@ -14,7 +14,11 @@ type helloFlow = {
   name: number
 };
 
+// eslint-disable-next-line react/prefer-stateless-function
 class HelloFlow extends React.Component {
+  shouldComponentUpdate () {
+    return true;
+  }
   props: helloFlow
   render () {
     return <div>{this.props.greeting} {this.props.name}</div>;
