@@ -1,0 +1,27 @@
+@value grey #333300;
+
+:root {
+    --red: #d33;
+}
+
+.hello {
+    color: green;
+}
+
+.flex {
+    display: flex;
+    color: var(--red);
+    border: solid black 1px;
+    border-radius: 5px;
+    &_foo {
+        color: blue;
+    }
+    & .bar {
+        color: purple;
+        font-weight: bold;
+    }
+    &.baz {
+        color: green;
+        font-weight: bold;
+    }
+}

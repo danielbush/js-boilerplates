@@ -1,4 +1,6 @@
 import 'babel-polyfill';
-import HelloWorld from './hello';
+import { render, renderToString } from './HelloFlow.jsx';
+import hello from './HelloWorld.jsx';
 
-(new HelloWorld()).hello();
+console.log(renderToString());
+render();

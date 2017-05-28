@@ -11,7 +11,9 @@
 - `yarn run check` - runs flow and linting
 - np - use `np --no-publish`
 - `version` run-script (hook) to update changelog for np
-- added eslint default for react - eslint-plugin-react
+- added eslint default for react - `eslint-plugin-react`
+- we extend `plugin:react/all` for eslint / react base
+  - for the moment going with `.jsx` for jsx files
 
 ### Changed
 
