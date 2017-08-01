@@ -4,3 +4,4 @@ lib/
 .env
 jspm_packages/
 .serverless
+*.log
