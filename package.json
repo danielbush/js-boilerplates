@@ -10,10 +10,15 @@
     "dotenv": "^4.0.0"
   },
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "test": "mocha test/index.js"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
-    "eslint": "^3.19.0"
+    "chai": "^4.1.0",
+    "eslint": "^3.19.0",
+    "mocha": "^3.5.0",
+    "sinon": "^2.4.1",
+    "sinon-chai": "^2.12.0"
   }
 }
