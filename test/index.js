@@ -1,8 +1,11 @@
 import chai from 'chai';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
+import enzyme from 'enzyme';
+import chaiEnzyme from 'chai-enzyme';
 
 chai.use(sinonChai);
+chai.use(chaiEnzyme);
 const expect = chai.expect;
 const sandbox = sinon.sandbox.create();
 

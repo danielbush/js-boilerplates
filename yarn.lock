@@ -4663,7 +4663,7 @@ rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-dom@^15.5.4:
+react-dom@^15.6.1:
   version "15.6.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.6.1.tgz#2cb0ed4191038e53c209eb3a79a23e2a4cf99470"
   dependencies:
@@ -4682,6 +4682,13 @@ react-element-to-jsx-string@^5.0.0:
     sortobject "^1.0.0"
     stringify-object "2.4.0"
     traverse "^0.6.6"
+
+react-test-renderer@^15.6.1:
+  version "15.6.1"
+  resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-15.6.1.tgz#026f4a5bb5552661fd2cc4bbcd0d4bc8a35ebf7e"
+  dependencies:
+    fbjs "^0.8.9"
+    object-assign "^4.1.0"
 
 react@^15.5.4:
   version "15.6.1"
