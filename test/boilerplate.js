@@ -6,7 +6,7 @@ chai.use(sinonChai);
 const expect = chai.expect;
 const sandbox = sinon.sandbox.create();
 
-describe('something', () => {
+describe('boilerplate', () => {
 
   let stub;
 
@@ -16,7 +16,7 @@ describe('something', () => {
   afterEach(() => sandbox.reset());
   after(() => sandbox.restore());
 
-  it('should do something', () => {
+  it('should do basic example (boilerplate)', () => {
     stub.callsFake(() => 123)
     const answer = stub(2);
     expect(answer).to.equal(123);
