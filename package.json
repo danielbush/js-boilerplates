@@ -1,7 +1,7 @@
 {
-  "name": "2br-react-space",
+  "name": "node-boilerplate",
   "version": "1.0.0",
-  "description": "2br spaces",
+  "description": "node boilerplate",
   "main": "lib/index.js",
   "repository": "tbc",
   "author": "Daniel Bush",
@@ -11,7 +11,7 @@
   },
   "scripts": {
     "start": "node src/index.js",
-    "test": "mocha test/index.js"
+    "test": "mocha test/"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
