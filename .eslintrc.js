@@ -49,6 +49,7 @@ module.exports = {
     // Modification to plugin:react/all
     'react/jsx-indent': [2, 2],
     'react/jsx-indent-props': [2, 2],
-    'react/jsx-no-literals': 0
+    'react/jsx-no-literals': 0,
+    'react/sort-comp': 0
   }
 };

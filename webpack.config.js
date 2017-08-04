@@ -4,6 +4,7 @@ const path = require('path');
 module.exports = {
   devtool: '#inline-source-map',
   entry: {
+    boilerplate: [ path.join(__dirname, 'src/boilerplate.js') ],
     main: [ path.join(__dirname, 'src/index.js') ]
   },
   output: {
