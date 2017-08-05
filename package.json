@@ -64,6 +64,7 @@
     "postcss-modules-values": "^1.2.2",
     "postcss-nested": "^2.0.2",
     "postcss-reporter": "^3.0.0",
+    "postcss-scss": "^1.0.2",
     "postcss-url": "^6.0.4",
     "react-test-renderer": "^15.6.1",
     "sinon": "^2.4.1",

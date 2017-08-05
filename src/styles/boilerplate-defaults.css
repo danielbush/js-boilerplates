@@ -1,2 +1,3 @@
-@value hello green;
+// Colons seem optional for @value's.
+@value hello: green;
 @value grey #333300;
