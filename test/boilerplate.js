@@ -28,8 +28,8 @@ describe('boilerplate', () => {
   });
 
   it('should shallow mount div', () => {
-    const Component = () => (<div />)
-    const wrapper = shallow(<Component/>);
+    const Component = () => (<div />);
+    const wrapper = shallow(<Component />);
     expect(wrapper.find('div')).to.have.length(1);
   });
 
