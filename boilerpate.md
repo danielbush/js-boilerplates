@@ -1,4 +1,7 @@
-# React Boilerplate
+# Babel / React Boilerplate
+
+This is actually: react + webpack + postcss (style/css loaders) + cssnext.
+Flow is included because we extend babel.
 
 ## 2017-08-05
 - Using --lazy to load for webpack-dev-server because
