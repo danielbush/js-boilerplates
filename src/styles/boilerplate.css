@@ -1,4 +1,4 @@
-@value grey #333300;
+@import 'boilerplate-defaults';
 
 :root {
     --red: #d33;

@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import classes from 'classnames';
 
-import style from './styles/hello.css';
+import style from './styles/boilerplate.css';
 
 const grey = style.grey;
+
+console.log('imported css colour var', grey);
 
 class HelloWorld extends React.Component {
 
