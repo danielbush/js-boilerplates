@@ -17,6 +17,7 @@
     "build": "babel -s --out-dir lib src",
     "start": "yarn run build && node lib/index.js",
     "test": "mocha -r babel-polyfill -r babel-register test/",
+    "test:watch": "npm run test -- --watch",
     "flow:init": "flow init",
     "flow:start": "flow status",
     "flow:stop": "flow stop",
