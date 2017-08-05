@@ -12,8 +12,8 @@
   "scripts": {
     "lint": "eslint src/ test/",
     "start": "node src/index.js",
-    "test": "mocha test/",
-    "test:watch": "mocha --watch test/"
+    "test:unit": "mocha test/unit",
+    "test:watch": "mocha --watch test/unit"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
