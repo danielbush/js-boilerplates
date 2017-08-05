@@ -1,14 +1,6 @@
 import React from 'react';
-import chai from 'chai';
-import sinon from 'sinon';
-import sinonChai from 'sinon-chai';
-import { shallow } from 'enzyme';
-import chaiEnzyme from 'chai-enzyme';
 
-chai.use(sinonChai);
-chai.use(chaiEnzyme);
-const expect = chai.expect;
-const sandbox = sinon.sandbox.create();
+const shallow = enzyme.shallow;
 
 describe('boilerplate', () => {
 
