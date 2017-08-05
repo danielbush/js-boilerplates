@@ -12,7 +12,8 @@
   "scripts": {
     "lint": "eslint src/ test/",
     "start": "node src/index.js",
-    "test:unit": "mocha test/unit",
+    "test": "npm run test:unit",
+    "test:unit": "mocha -r test/setup/unit test/unit",
     "test:watch": "mocha --watch test/unit"
   },
   "devDependencies": {

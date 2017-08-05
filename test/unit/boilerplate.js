@@ -1,10 +1,3 @@
-const chai = require('chai');
-const sinon = require('sinon');
-const sinonChai = require('sinon-chai');
-
-chai.use(sinonChai);
-const expect = chai.expect;
-const sandbox = sinon.sandbox.create();
 
 describe('boilerplate', () => {
 
