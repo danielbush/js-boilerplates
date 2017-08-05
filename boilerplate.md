@@ -15,3 +15,7 @@ Flow is included because we extend babel.
 - Use `postcss-scss` parser to benefit from inline comments.
   `postcss-discard-comments` looks mature see this issue:
   https://github.com/postcss/postcss/issues/362
+- https://medium.com/@rajaraodv/webpack-the-confusing-parts-58712f8fcad9
+  Good overview.
+- https://webpack.js.org/configuration/
+  Good configuration reference.
