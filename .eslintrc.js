@@ -51,6 +51,8 @@ module.exports = {
     'react/jsx-indent-props': [2, 2],
     'react/jsx-no-literals': 0,
     'react/sort-comp': 0,
-    'react/jsx-filename-extension': 0
+    'react/jsx-max-props-per-line': 0,
+    'react/jsx-sort-props': 0,
+    'react/jsx-filename-extension': 0,
   }
 };
