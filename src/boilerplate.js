@@ -1,8 +1,11 @@
 import 'babel-polyfill';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import ReactDOMServer from 'react-dom/server';
 
-import render2 from './boilerplate.flow.jsx';
-import render, { renderToString } from './boilerplate.jsx';
+import HelloWorld from './boilerplate.jsx';
+import HelloFlow from './boilerplate.flow.jsx';
 
-console.log(renderToString());
-render();
-render2();
+ReactDOM.render(<HelloWorld name="world" />, document.querySelector('#hello-world'));
+ReactDOM.render(<HelloWorld name="flow" />, document.querySelector('#hello-flow'));
+console.log(ReactDOMServer.renderToString(React.createElement(HelloWorld, { name: 'world' })));

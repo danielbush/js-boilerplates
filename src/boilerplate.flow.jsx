@@ -23,9 +23,4 @@ class HelloFlow extends React.Component {
 
 }
 
-export default () => {
-  ReactDOM.render(
-    <HelloFlow name="flow world" />,
-    document.querySelector('#hello-flow')
-  );
-};
+export default HelloFlow;
