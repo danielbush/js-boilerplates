@@ -2,6 +2,7 @@ import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactDOMServer from 'react-dom/server';
+import { Router, Route, Switch } from 'react-router'
 
 import HelloWorld from './boilerplate.jsx';
 import HelloFlow from './boilerplate.flow.jsx';
