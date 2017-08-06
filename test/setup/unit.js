@@ -1,3 +1,4 @@
+require('babel-polyfill');
 const chai = require('chai');
 const sinon = require('sinon');
 const sinonChai = require('sinon-chai');
@@ -14,3 +15,15 @@ global.expect = expect;
 global.sinon = sinon;
 global.sandbox = sandbox;
 global.enzyme = enzyme;
+
+// style-loader requires a real dom.
+// http://airbnb.io/enzyme/docs/guides/jsdom.html
+const { JSDOM } = require('jsdom');
+const jsdom = new JSDOM('<!doctype html><html><body></body></html>');
+const { window } = jsdom;
+global.window = window;
+global.document = window.document;
+global.navigator = {
+  userAgent: 'node.js',
+};
+

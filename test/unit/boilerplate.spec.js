@@ -1,6 +1,6 @@
 import React from 'react';
 
-import HelloWorld from './boilerplate';
+import HelloWorld from '../../src/boilerplate/boilerplate';
 
 const shallow = enzyme.shallow;
 
@@ -16,7 +16,7 @@ describe('boilerplate', () => {
 
   it('should shallow mount div', () => {
     const wrapper = shallow(<HelloWorld name="foo" />);
-    expect(wrapper.find('div')).to.have.length(1);
+    expect(wrapper.find('div')).to.have.length(3);
   });
 
 });
