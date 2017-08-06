@@ -1,7 +1,8 @@
-# Node Boilerplate
+# Serverless Boilerplate
 
-This acts as a base for a number of other configurations.
+This is serverless on top of node.
+No express here.
 
 ## 2017-08-06
-- Added collocated tests which seem to be popular eg `src/file.js` and `src/file.spec.js`.
-  Also see: https://github.com/mochajs/mocha/issues/1577 .
+- Deploy of src/boilerplate works but is 18M.
+- TODO: try this: https://www.npmjs.com/package/serverless-webpack-plugin and add webpack config.
