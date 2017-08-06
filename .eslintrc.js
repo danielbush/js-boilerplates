@@ -18,6 +18,7 @@ module.exports = {
     fetch: true,
     sandbox: true,
     expect: true,
+    chai: true,
   },
   rules: {
     'space-infix-ops': [ 'error' ],
