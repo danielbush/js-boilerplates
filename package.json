@@ -23,7 +23,7 @@
     "build": "babel -s --out-dir lib src",
     "start": "webpack-dev-server --inline --lazy --config webpack.config.js",
     "test": "npm run test:unit",
-    "test:unit": "mocha -r babel-polyfill -r babel-register -r test/setup/unit test/unit",
+    "test:unit": "mocha -r babel-polyfill -r babel-register -r test/setup/unit src/*.spec.js src/**/*.spec.js test/unit",
     "test:watch": "npm run test:unit -- --watch",
     "flow:init": "flow init",
     "flow:start": "flow status",
