@@ -16,7 +16,8 @@
     "test:unit": "mocha -r test/setup/unit src/*.spec.js src/**/*.spec.js test/unit",
     "test:watch": "mocha --watch test/unit",
     "build": "babel -s --out-dir lib src",
-    "deploy": "npm run lint && npm run build && node -r dotenv/config node_modules/.bin/serverless deploy"
+    "deploy": "npm run lint && npm run build && node -r dotenv/config node_modules/.bin/serverless deploy",
+    "remove": "serverless remove"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
