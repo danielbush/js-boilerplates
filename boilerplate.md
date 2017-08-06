@@ -6,6 +6,14 @@ Flow is included because we extend babel.
 ## 2017-08-06
 - Using style / css load won't work with babel tests, so switched to `mocha-webpack`.
 - NOTE: `mocha-webpack-watch` will print multiple results to the screen usually at start up.
+- http://randycoulman.com/blog/2016/03/22/testing-with-mocha-and-webpack/
+  Explains rationale for mocha-webpack.
+- https://github.com/andris9/encoding/issues/16 mentions a case where we have a dynamic
+  require in the encoding module which causes webpack users issues.
+  https://github.com/andris9/encoding/issues/16#issuecomment-227007589 sums up the
+  issue.
+- TODO: use https://www.npmjs.com/package/ignore-styles (+ babel-register as before)
+  instead of `mocha-webpack`?
 
 ## 2017-08-05
 - Using --lazy to load for webpack-dev-server because
