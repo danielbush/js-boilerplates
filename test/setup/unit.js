@@ -1,3 +1,4 @@
+const { default: register } = require('ignore-styles');
 require('babel-polyfill');
 const chai = require('chai');
 const sinon = require('sinon');
@@ -15,6 +16,7 @@ global.expect = expect;
 global.sinon = sinon;
 global.sandbox = sandbox;
 global.enzyme = enzyme;
+global.fakeStyles = {}; // ignore-styles 'register'
 
 // style-loader requires a real dom.
 // http://airbnb.io/enzyme/docs/guides/jsdom.html
@@ -27,3 +29,4 @@ global.navigator = {
   userAgent: 'node.js',
 };
 
+register([ '.css', '.sass', '.scss' ], (module, filename) => (module.exports = global.fakeStyles ));

@@ -6,6 +6,8 @@ const shallow = enzyme.shallow;
 
 describe('boilerplate', () => {
 
+  global.fakeStyles.grey = '#hey!';
+
   let stub;
 
   beforeEach(() => {

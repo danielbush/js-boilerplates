@@ -1,13 +1,9 @@
-// import 'babel-polyfill';
 import React from 'react';
 import PropTypes from 'prop-types';
 import classes from 'classnames';
 
 import style from '../styles/boilerplate.css';
 import HelloFlow from './boilerplate.flow.jsx';
-
-const grey = style.grey;
-console.log('imported css colour var', grey);
 
 class HelloWorld extends React.Component {
 
@@ -16,6 +12,8 @@ class HelloWorld extends React.Component {
   }
 
   render () {
+    const grey = style.grey;
+    console.log('imported css colour var', grey);
     return (
       <div>
         <h1 className={style.hello} >hello {this.props.name} (green)</h1>
