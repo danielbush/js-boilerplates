@@ -15,7 +15,10 @@ module.exports = {
   },
   globals: {
     module: true,
-    fetch: true
+    fetch: true,
+    sandbox: true,
+    expect: true,
+    chai: true,
   },
   rules: {
     'space-infix-ops': [ 'error' ],

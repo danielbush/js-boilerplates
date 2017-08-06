@@ -1,8 +1,8 @@
 {
-  "name": "2br-react-space",
+  "name": "node-boilerplate",
   "version": "1.0.0",
-  "description": "2br spaces",
-  "main": "lib/index.js",
+  "description": "node boilerplate",
+  "main": "src/index.js",
   "repository": "tbc",
   "author": "Daniel Bush",
   "license": "MIT",
@@ -10,8 +10,11 @@
     "dotenv": "^4.0.0"
   },
   "scripts": {
+    "lint": "eslint src/ test/",
     "start": "yarn run build && node lib/index.js",
-    "test": "mocha test/index.js",
+    "test": "npm run test:unit",
+    "test:unit": "mocha -r test/setup/unit src/*.spec.js src/**/*.spec.js test/unit",
+    "test:watch": "mocha --watch test/unit",
     "build": "babel -s --out-dir lib src",
     "deploy": "node -r dotenv/config node_modules/.bin/serverless deploy"
   },
@@ -23,10 +26,10 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "chai": "^4.1.0",
-    "eslint": "^3.19.0",
+    "eslint": "^4.3.0",
     "mocha": "^3.5.0",
     "serverless": "^1.13.1",
-    "sinon": "^2.4.1",
+    "sinon": "^3.0.0",
     "sinon-chai": "^2.12.0"
   }
 }
