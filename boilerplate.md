@@ -17,6 +17,7 @@ Flow is included because we extend babel.
   `isomorphic-fetch` which uses `node-fetch` which uses `encoding` which gets a warning because of
   dynamic require.  (You can configure webpack to ignore or handle these situations but it is ugly).
   eg https://github.com/andris9/encoding/issues/16 .
+- eslint is `~4.1.0` because we get warnings that break flycheck for `4.{2,3}.x`.
 
 
 ## 2017-08-05
