@@ -3,6 +3,10 @@
 This is actually: react + webpack + postcss (style/css loaders) + cssnext.
 Flow is included because we extend babel.
 
+## 2017-08-06
+- Using style / css load won't work with babel tests, so switched to `mocha-webpack`.
+- NOTE: `mocha-webpack-watch` will print multiple results to the screen usually at start up.
+
 ## 2017-08-05
 - Using --lazy to load for webpack-dev-server because
   `webpack-dev-server --inline --hot ...` is not working.
