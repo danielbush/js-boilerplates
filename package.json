@@ -7,19 +7,22 @@
   "author": "Daniel Bush",
   "license": "MIT",
   "dependencies": {
-    "dotenv": "^4.0.0"
+    "dotenv": "^4.0.0",
+    "eslint-plugin-flowtype": "^2.35.0"
   },
   "scripts": {
     "lint": "eslint src/ test/",
-    "start": "node src/index.js",
+    "start": "flow-node src/index.js",
+    "build": "flow-remove-types src/ --out-dir lib/",
     "test": "npm run test:unit",
-    "test:unit": "mocha -r test/setup/unit src/*.spec.js src/**/*.spec.js test/unit",
-    "test:watch": "mocha --watch test/unit"
+    "test:unit": "mocha -r flow-remove-types/register -r test/setup/unit src/*.spec.js src/**/*.spec.js test/unit",
+    "test:watch": "npm run test:unit -- --watch"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
     "chai": "^4.1.0",
     "eslint": "^4.3.0",
+    "flow-remove-types": "^1.2.1",
     "mocha": "^3.5.0",
     "sinon": "^3.0.0",
     "sinon-chai": "^2.12.0"

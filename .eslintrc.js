@@ -20,6 +20,12 @@ module.exports = {
     expect: true,
     chai: true,
   },
+  plugins: [
+    'flowtype'
+  ],
+  extends: [
+    'plugin:flowtype/recommended'
+  ],
   rules: {
     'space-infix-ops': [ 'error' ],
     quotes: [ 2, 'single', 'avoid-escape' ],
