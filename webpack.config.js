@@ -4,8 +4,8 @@ const path = require('path');
 module.exports = {
   devtool: '#inline-source-map',
   entry: {
-    boilerplate: [ path.join(__dirname, 'src/boilerplate.js') ],
-    main: [ path.join(__dirname, 'src/index.js') ]
+    boilerplate: [ 'babel-polyfill', path.join(__dirname, 'src/boilerplate/index.js') ],
+    main: [ 'babel-polyfill', path.join(__dirname, 'src/index.js') ]
   },
   output: {
     path: path.join(__dirname, 'build'),
