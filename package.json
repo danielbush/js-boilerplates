@@ -15,7 +15,7 @@
     "check": "yarn run flow && yarn run lint",
     "bundle": "rm build/*; webpack && uglifyjs -o build/dist.js build/main.js && cat build/dist.js | gzip - >build/dist.js.gz",
     "build": "babel -s --out-dir lib src",
-    "start": "yarn run build && node lib/index.js",
+    "start": "babel-node lib/index.js",
     "test": "npm run test:unit",
     "test:unit": "mocha -r babel-polyfill -r babel-register -r test/setup/unit src/*.spec.js src/**/*.spec.js test/unit",
     "test:watch": "npm run test:unit -- --watch",
