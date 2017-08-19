@@ -15,7 +15,7 @@
     "start": "yarn run build && node lib/index.js",
     "test": "npm run test:unit",
     "test:unit": "mocha -r babel-register -r test/setup/unit src/*.spec.js src/**/*.spec.js test/unit",
-    "test:watch": "npm run test:unit -- --watch"
+    "test:watch": "npm run test:unit -- --watch",
     "build": "babel -s --out-dir lib src",
     "deploy": "npm run lint && npm run build && node -r dotenv/config node_modules/.bin/serverless deploy",
     "remove": "serverless remove"
@@ -27,6 +27,7 @@
     "babel-loader": "^7.0.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
+    "babel-register": "^6.26.0",
     "chai": "^4.1.0",
     "eslint": "^4.3.0",
     "mocha": "^3.5.0",
