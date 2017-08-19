@@ -7,14 +7,15 @@
   "author": "Daniel Bush",
   "license": "MIT",
   "dependencies": {
-    "dotenv": "^4.0.0"
+    "dotenv": "^4.0.0",
+    "eslint-plugin-flowtype": "^2.35.0"
   },
   "scripts": {
     "lint": "eslint src/ test/",
     "start": "yarn run build && node lib/index.js",
     "test": "npm run test:unit",
-    "test:unit": "mocha -r test/setup/unit src/*.spec.js src/**/*.spec.js test/unit",
-    "test:watch": "mocha --watch test/unit",
+    "test:unit": "mocha -r babel-register -r test/setup/unit src/*.spec.js src/**/*.spec.js test/unit",
+    "test:watch": "npm run test:unit -- --watch"
     "build": "babel -s --out-dir lib src",
     "deploy": "npm run lint && npm run build && node -r dotenv/config node_modules/.bin/serverless deploy",
     "remove": "serverless remove"
