@@ -8,4 +8,6 @@ Uses babel, not flow-remove-types.
 ### Added
 - Upgraded from node_master which uses `remove-flow-types`.
   But we are using babel.
+- Added `babel-register`.
+- Use `babel-node` for `start`
 

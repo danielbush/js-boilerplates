@@ -12,7 +12,7 @@
   },
   "scripts": {
     "lint": "eslint src/ test/",
-    "start": "yarn run build && node lib/index.js",
+    "start": "babel-node lib/index.js",
     "test": "npm run test:unit",
     "test:unit": "mocha -r babel-register -r test/setup/unit src/*.spec.js src/**/*.spec.js test/unit",
     "test:watch": "npm run test:unit -- --watch",
