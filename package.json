@@ -7,7 +7,7 @@
   "author": "Daniel Bush",
   "license": "MIT",
   "dependencies": {
-    "dotenv": "^4.0.0",
+    "dotenv-safe": "^4.0.4",
     "eslint-plugin-flowtype": "^2.35.0"
   },
   "scripts": {
