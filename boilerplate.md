@@ -2,6 +2,11 @@
 
 This acts as a base for a number of other configurations.
 
+## 2017-09-82
+### Changed
+- Switched to `dotenv-safe` over `dotenv`.
+  - the line to load it is included in src/index.js but is commented out
+
 ## 2017-08-18
 ### Added
 - `flow-remove-types` which also gives us `flow-node` and `remove-flow-types/register`.
