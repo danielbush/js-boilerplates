@@ -2,6 +2,13 @@
 
 This acts as a base for a number of other configurations.
 
+## 2017-09-10
+### Added
+- Docker image creation.
+  - `yarn run docker:build` will an image with node as entry point
+  - `yarn run docker:run` should start the express server.
+     It will run `node` with default argument `lib/index.js`
+
 ## 2017-09-11
 ### Added
 - Added a check:env to verify .env file (dotenv-safe).
