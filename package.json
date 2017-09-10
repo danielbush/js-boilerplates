@@ -15,6 +15,9 @@
     "start": "flow-node src/index.js",
     "check:env": "node -e \"require('dotenv-safe').load()\"",
     "build": "flow-remove-types src/ --out-dir lib/",
+    "docker:run": "export $(egrep -v '^#' .env) && docker run -it --rm $IMAGE_NAME",
+    "docker:build": "eval $(egrep -v '^#' .env) npm run docker:build:image",
+    "docker:build:image": "npm run build && docker build . -t $IMAGE_NAME",
     "test": "npm run test:unit",
     "test:unit": "mocha -r flow-remove-types/register -r test/setup/unit src/*.spec.js src/**/*.spec.js test/unit",
     "test:watch": "npm run test:unit -- --watch"
