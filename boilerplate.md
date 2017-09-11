@@ -2,6 +2,10 @@
 
 This acts as a base for a number of other configurations.
 
+## 2017-09-11
+### Changed
+- Don't use docker entrypoint; so it's easier to run either node or yarn or npm.
+
 ## 2017-09-10
 ### Added
 - Docker image creation.

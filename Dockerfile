@@ -15,5 +15,4 @@ USER node
 RUN yarn
 RUN yarn run build
 
-ENTRYPOINT ["node"]
-CMD ["lib/index.js"]
+CMD ["node", "lib/index.js"]
