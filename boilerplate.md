@@ -2,6 +2,10 @@
 
 This acts as a base for a number of other configurations.
 
+## 2017-09-11
+### Added
+- Added a check:env to verify .env file (dotenv-safe).
+
 ## 2017-09-82
 ### Changed
 - Switched to `dotenv-safe` over `dotenv`.
