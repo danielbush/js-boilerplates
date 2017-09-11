@@ -13,6 +13,7 @@
   "scripts": {
     "lint": "eslint src/ test/",
     "start": "flow-node src/index.js",
+    "check:env": "node -e \"require('dotenv-safe').load()\"",
     "build": "flow-remove-types src/ --out-dir lib/",
     "test": "npm run test:unit",
     "test:unit": "mocha -r flow-remove-types/register -r test/setup/unit src/*.spec.js src/**/*.spec.js test/unit",
