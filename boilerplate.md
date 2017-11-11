@@ -2,6 +2,13 @@
 
 This acts as a base for a number of other configurations.
 
+## 2017-11-12
+### Added
+- `version` run-script which bumps changelog
+- NOTE: `npm version patch|minor|major` should work with this run-script
+- Also, we could probably just use np which will do a bunch of extra things like
+  running tests.
+
 ## 2017-09-11
 ### Changed
 - Don't use docker entrypoint; so it's easier to run either node or yarn or npm.
