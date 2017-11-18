@@ -27,6 +27,7 @@
     "babel-eslint": "^7.2.3",
     "chai": "^4.1.0",
     "changelog-verify": "^1.0.4",
+    "dirty-chai": "^2.0.1",
     "eslint": "^4.3.0",
     "flow-remove-types": "^1.2.1",
     "mocha": "^3.5.0",

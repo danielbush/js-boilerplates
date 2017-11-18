@@ -2,6 +2,10 @@
 
 This acts as a base for a number of other configurations.
 
+## 2017-11-18
+### Added
+- dirty-chai to always use function calls in chai assertions (eg expect(...).to.be.calledOnce()).
+
 ## 2017-11-12
 ### Added
 - `version` run-script which bumps changelog
