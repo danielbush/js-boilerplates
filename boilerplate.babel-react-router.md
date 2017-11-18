@@ -27,7 +27,7 @@ TODO: explore bundle splitting using routes.
 - Updated boilerplate.
 - TOOO: /flow route doesn't actually do any flow; tbh, I think it's orthogonal to what we're doing
   here, so maybe a better name for this route?
-- Fix use of dotenv and dotenv-safe - probably have to ensure this is the case for other boilerplates.
+- Fixed use of dotenv and dotenv-safe - probably have to ensure this is the case for other boilerplates.
 
 ## 2017-08-18
 - Cleaned up `src/boilerplate` after merging react-master.
