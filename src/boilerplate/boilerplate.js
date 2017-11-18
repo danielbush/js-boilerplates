@@ -2,9 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
-// webpack-dev-server will server up /boilerlate.html
-// - which loads react router
-// - which lets react router handle other routes eg /flow
+// See boilerplate changelog.
 
 const MainRoute = (props) => (
   <div>
