@@ -3,6 +3,11 @@
 This is actually: react + webpack + postcss (style/css loaders) + cssnext.
 Flow is included because we extend babel.
 
+## 2017-11-19
+- Upgraded the boilerplate.
+- I've enabled babel-polyfill import in src/index.js
+- I'm not sure we really need the docker files - we could just delete them?
+
 ## 2017-08-06
 - Using style / css load won't work with babel tests, so switched to `mocha-webpack`.
   - NOTE: `mocha-webpack-watch` will print multiple results to the screen usually at start up.
