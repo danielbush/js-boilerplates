@@ -7,14 +7,20 @@
   "author": "Daniel Bush",
   "license": "MIT",
   "dependencies": {
-    "babel-polyfill": "^6.23.0"
+    "babel-polyfill": "^6.23.0",
+    "dotenv-safe": "^4.0.4",
+    "eslint-plugin-flowtype": "^2.35.0"
   },
   "scripts": {
     "lint": "eslint src/ test/",
     "flow": "flow",
     "check": "yarn run flow && yarn run lint",
+    "check:env": "node -e \"require('dotenv-safe').load()\"",
     "bundle": "rm build/*; webpack && uglifyjs -o build/dist.js build/main.js && cat build/dist.js | gzip - >build/dist.js.gz",
     "build": "babel -s --out-dir lib src",
+    "docker:run": "export $(egrep -v '^#' .env) && docker run -it --rm $IMAGE_NAME",
+    "docker:build": "eval $(egrep -v '^#' .env) npm run docker:build:image",
+    "docker:build:image": "npm run build && docker build . -t $IMAGE_NAME",
     "start": "babel-node lib/index.js",
     "test": "npm run test:unit",
     "test:unit": "mocha -r babel-polyfill -r babel-register -r test/setup/unit src/*.spec.js src/**/*.spec.js test/unit",
@@ -41,7 +47,7 @@
     "babel-register": "^6.24.1",
     "chai": "^4.1.0",
     "changelog-verify": "^1.0.4",
-    "dotenv": "^4.0.0",
+    "dirty-chai": "^2.0.1",
     "eslint": "^4.3.0",
     "eslint-plugin-flowtype": "^2.33.0",
     "eslint-plugin-import": "^2.3.0",
@@ -51,7 +57,7 @@
     "mocha": "^3.5.0",
     "sinon": "^3.0.0",
     "sinon-chai": "^2.12.0",
-    "version-changelog": "^2.0.1"
+    "version-changelog": "^2.1.0"
   },
   "peerDependencies": {}
 }
