@@ -17,7 +17,7 @@
     "react-router-dom": "^4.1.2"
   },
   "scripts": {
-    "lint": "eslint --debug src/ test/",
+    "lint": "eslint src/ test/",
     "flow": "flow",
     "check": "yarn run flow && yarn run lint",
     "check:env": "node -e \"require('dotenv-safe').load()\"",
