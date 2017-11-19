@@ -19,11 +19,13 @@ const FlowRoute = (props) => (
 );
 
 const App = (props) => (
-  <Switch>
-    <Route exact path="/" component={MainRoute} />
-    <Route exact path="/boilerplate.html" component={MainRoute} />
-    <Route path="/flow" component={FlowRoute} />
-  </Switch>
+  <Router>
+    <Switch>
+      <Route exact path="/" component={MainRoute} />
+      <Route exact path="/boilerplate.html" component={MainRoute} />
+      <Route path="/flow" component={FlowRoute} />
+    </Switch>
+  </Router>
 );
 
 export default App;

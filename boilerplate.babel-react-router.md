@@ -28,6 +28,8 @@ TODO: explore bundle splitting using routes.
 - TOOO: /flow route doesn't actually do any flow; tbh, I think it's orthogonal to what we're doing
   here, so maybe a better name for this route?
 - Fixed use of dotenv and dotenv-safe - probably have to ensure this is the case for other boilerplates.
+- Looking for appropriate react route naming scheme in src/boilerplate/.
+  I'm using index.js to mount App, and app.js to contain the Router element.
 
 ## 2017-08-18
 - Cleaned up `src/boilerplate` after merging react-master.

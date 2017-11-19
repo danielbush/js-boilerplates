@@ -1,12 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
 
-import App from './boilerplate';
+import App from './app';
 
 ReactDOM.render(
-  <Router>
-    <App />
-  </Router>,
+  <App />,
   document.querySelector('#hello-world')
 );
