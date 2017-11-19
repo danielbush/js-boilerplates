@@ -30,6 +30,9 @@ TODO: explore bundle splitting using routes.
 - Fixed use of dotenv and dotenv-safe - probably have to ensure this is the case for other boilerplates.
 - Looking for appropriate react route naming scheme in src/boilerplate/.
   I'm using index.js to mount App, and app.js to contain the Router element.
+- Fixed eslint react plugin warnings that were breaking flycheck.
+  https://github.com/yannickcr/eslint-plugin-react/pull/1292
+  eslint-plugin-react 7.4 fixes the warnings.
 
 ## 2017-08-18
 - Cleaned up `src/boilerplate` after merging react-master.

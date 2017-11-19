@@ -58,5 +58,6 @@ module.exports = {
     'react/jsx-max-props-per-line': 0,
     'react/jsx-sort-props': 0,
     'react/jsx-filename-extension': 0,
+    react/jsx-one-expression-per-line,
   }
 };

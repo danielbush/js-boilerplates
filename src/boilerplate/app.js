@@ -1,3 +1,4 @@
+/* eslint-disable react/no-multi-comp */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
@@ -6,7 +7,8 @@ import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
 const MainRoute = (props) => (
   <div>
-    This is the the main route.<br />
+    This is the the main route.
+    <br />
     <Link to="/flow" >/flow</Link>
   </div>
 );
