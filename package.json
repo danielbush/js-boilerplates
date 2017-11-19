@@ -10,7 +10,6 @@
     "babel-polyfill": "^6.23.0",
     "classnames": "^2.2.5",
     "dotenv-safe": "^4.0.4",
-    "eslint-plugin-flowtype": "^2.35.0",
     "in-publish": "^2.0.0",
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
