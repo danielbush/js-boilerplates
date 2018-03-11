@@ -1,3 +1,7 @@
-// Colons seem optional for @value's.
+/* Colons seem optional for @value's. */
 @value hello: green;
 @value grey #333300;
+/* 'foo' does not specify units, which requires postcss-modules-values-replace: */
+@value foo: 1;
+@value bar: calc(foo + foo)px;
+

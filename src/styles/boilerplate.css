@@ -6,6 +6,7 @@
 
 .hello {
     color: hello;
+    border: dotted red bar;
 }
 
 .flex {
