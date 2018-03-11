@@ -1,7 +1,14 @@
 /* Colons seem optional for @value's. */
 @value hello: green;
 @value grey #333300;
-/* 'foo' does not specify units, which requires postcss-modules-values-replace: */
+
+/* `foo` does not specify units, postcss-modules-values-replace seems to allow 
+   us to do `calc(foo + foo)px` because it substitutes "calc(foo + foo)". */
 @value foo: 1;
 @value bar: calc(foo + foo)px;
+
+/* 'baz' will work in `calc` without postcss-modules-values-replace. */
+/* `calc(baz + baz)` will be fine. */ 
+@value baz: 1px;
+@value foobar: calc(baz + baz);
 
