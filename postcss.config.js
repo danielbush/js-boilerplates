@@ -5,6 +5,7 @@ module.exports = {
   plugins: [
     require('postcss-import'),
     require('postcss-url'),
+    require('postcss-modules-values-replace'),
     require('postcss-cssnext'),
     require('postcss-browser-reporter'),
     require('postcss-reporter'),

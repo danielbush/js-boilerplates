@@ -3,6 +3,21 @@
 This is actually: react + webpack + postcss (style/css loaders) + cssnext.
 Flow is included because we extend babel.
 
+## 2018-03-11
+- Added `postcss-modules-values-replace` - this lets us use dimensionless `@value`'s inside
+  `calc` and is a replacement for `postcss-modules-values`.
+  It handles edge cases like:
+  `@value foo: 1;`
+  `@value bar: calc(foo + foo)px;`
+  If we use `bar` in a class, we'll see `2px`.
+  NOTE: `@value foo: 1px;` will work WITHOUT `postcss-modules-values-replace`;
+  we'll see `calc(1px +1px)` in the css when used in a rule.
+  The case we are handling is when there is NO `px` or other unit on the value.
+  - Dimensionless units may be useful when doing svg - an example is a circle
+    radius value which is implicitly 'px' but which we may want to use to specify
+    things like height or line-height.
+- We may want to consider `postcss-calc` as well - it is mentioned in the docs.
+
 ## 2017-11-19
 - Upgraded the boilerplate.
 - I've enabled babel-polyfill import in src/index.js
