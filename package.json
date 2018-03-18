@@ -14,7 +14,7 @@
     "lint": "eslint src/ test/",
     "start": "flow-node src/index.js",
     "check:env": "node -e \"require('dotenv-safe').load()\"",
-    "build": "flow-remove-types src/ --out-dir lib/",
+    "build": "rm -rf lib; flow-remove-types src/ --out-dir lib/",
     "docker:run": "export $(egrep -v '^#' .env) && docker run -it --rm $IMAGE_NAME",
     "docker:build": "eval $(egrep -v '^#' .env) npm run docker:build:image",
     "docker:build:image": "npm run build && docker build . -t $IMAGE_NAME",
