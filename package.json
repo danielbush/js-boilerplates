@@ -23,7 +23,7 @@
     "check": "yarn run flow && yarn run lint",
     "check:env": "node -e \"require('dotenv-safe').load()\"",
     "bundle": "rm build/*; webpack && uglifyjs -o build/dist.js build/main.js && cat build/dist.js | gzip - >build/dist.js.gz",
-    "build": "babel -s --out-dir lib src",
+    "build": "rm -rf lib/; babel -s --out-dir lib src",
     "start": "webpack-dev-server --inline --lazy --config webpack.config.js",
     "docker:run": "export $(egrep -v '^#' .env) && docker run -it --rm $IMAGE_NAME",
     "docker:build": "eval $(egrep -v '^#' .env) npm run docker:build:image",
