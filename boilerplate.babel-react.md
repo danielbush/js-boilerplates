@@ -3,6 +3,15 @@
 This is actually: react + webpack + postcss (style/css loaders) + cssnext.
 Flow is included because we extend babel.
 
+## 2018-03-19
+- Add `rm -rf lib/` to `build` run-script.
+  Can get weird behaviour if we don't clear out the old especially
+  if a function has been moved.
+- Added step to copy styles from `src/styles` to `lib/styles`.
+  I think we need this if we are a lib and are not building with babel
+  and not bundling with webpack.  Taken from 2br-spaces project which
+  is build as package and used by 2br-frontend.
+
 ## 2018-03-11
 - Added `postcss-modules-values-replace` - this lets us use dimensionless `@value`'s inside
   `calc` and is a replacement for `postcss-modules-values`.
