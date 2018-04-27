@@ -13,7 +13,7 @@ Webpack devserver serves files in public/.
 - public/index.html does not load any js
 - public/boilerplate.html loads /assets/boilerplate.js which maps to the boilerplate entry point
 
-Point your brower to /boilerplate.html
+Point your browser to /boilerplate.html
 
 The boilerplate entry point is src/boilerplate/index.js .
 It specifies 2 routes (pages) that are simple div's with a Link tag pointing to the other page.
@@ -22,6 +22,9 @@ It specifies 2 routes (pages) that are simple div's with a Link tag pointing to 
 - NOTE: for / or /flow to work, you first have to point your browser to /boilerplate.html
 
 TODO: explore bundle splitting using routes.
+
+## 2018-04-27
+- Merged latest github/react-master (chai-as-promised).
 
 ## 2017-11-19
 - Updated boilerplate.
