@@ -6,9 +6,11 @@ const sinonChai = require('sinon-chai');
 const enzyme = require('enzyme');
 const chaiEnzyme = require('chai-enzyme');
 const dirtyChai = require('dirty-chai');
+const chaiAsPromised = require('chai-as-promised');
 
 chai.use(dirtyChai);
 chai.use(sinonChai);
+chai.use(chaiAsPromised);
 chai.use(chaiEnzyme);
 const expect = chai.expect;
 const sandbox = sinon.sandbox.create();

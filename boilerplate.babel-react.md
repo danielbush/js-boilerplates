@@ -3,6 +3,9 @@
 This is actually: react + webpack + postcss (style/css loaders) + cssnext.
 Flow is included because we extend babel.
 
+## 2018-04-26
+- Merge latest github/babel-master - brings in chai-as-promised.
+
 ## 2018-03-19
 - Add `rm -rf lib/` to `build` run-script.
   Can get weird behaviour if we don't clear out the old especially
