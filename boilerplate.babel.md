@@ -6,6 +6,9 @@ Currently doesn't include postcss - see babel_react.
 
 This acts as a base for a number of other configurations.
 
+## 2018-04-27
+- Merge github/node-master - brings in chai-as-promised.
+
 ## 2018-03-19
 - Add `rm -rf lib/` to `build` run-script.
   Can get weird behaviour if we don't clear out the old especially
