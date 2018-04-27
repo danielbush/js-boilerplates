@@ -26,6 +26,7 @@
   "devDependencies": {
     "babel-eslint": "^7.2.3",
     "chai": "^4.1.0",
+    "chai-as-promised": "^7.1.1",
     "changelog-verify": "^1.0.4",
     "dirty-chai": "^2.0.1",
     "eslint": "^4.3.0",
