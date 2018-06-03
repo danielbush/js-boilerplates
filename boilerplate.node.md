@@ -2,6 +2,10 @@
 
 This acts as a base for a number of other configurations.
 
+## 2018-06-03
+- Added eslint import resolver to show bad requires.
+  This is already in node-babel, babel-react boilerplate and higher.
+
 ## 2018-04-27
 - Added chai-as-promised.  Not sure why it was missing.
 

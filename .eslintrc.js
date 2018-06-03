@@ -21,12 +21,14 @@ module.exports = {
     chai: true,
   },
   plugins: [
-    'flowtype'
+    'flowtype',
+    'import',
   ],
   extends: [
     'plugin:flowtype/recommended'
   ],
   rules: {
+    'import/no-unresolved': [ 2, { commonjs: true, amd: true } ],
     'space-infix-ops': [ 'error' ],
     quotes: [ 2, 'single', 'avoid-escape' ],
     'keyword-spacing': 2,
