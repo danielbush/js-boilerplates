@@ -13,6 +13,7 @@ Node boilerplate uses
 - Used `test/mocha.opts` for general mocha settings, simplified package.json.
 - `main` should point to `lib/index.js`.
 - Use `npm` instead of `yarn` - removed `yarn.lock`.
+- Upgraded to latest versions (`npm outdated`).
 
 ## 2018-06-03
 
