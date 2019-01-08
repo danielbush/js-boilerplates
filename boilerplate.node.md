@@ -15,6 +15,11 @@ Node boilerplate uses
 - `main` still points to `src/index.js` (but for flow, should have been `lib/index.js`).
 - Use `npm` instead of `yarn` - removed `yarn.lock`.
 - Upgraded to latest versions (`npm outdated`).
+- Added `.prettierrc`, and use `plugin:prettier/recommended` in eslint.
+  Packages: `prettier`, `eslint-config-prettier`, `eslint-plugin-prettier`.
+  (taken from https://prettier.io/docs/en/eslint.html )
+  `yarn run lint` works as expected with prettier.
+- Linted project with prettier.
 
 ## 2018-06-03
 
