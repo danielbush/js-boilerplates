@@ -1,13 +1,13 @@
 # Babel Boilerplate
 
-Parent: github/node-master
+Upstream: node-master
 
-Babel boilerplate adds babel configurations to a project.
+Babel boilerplate takes the node boilerplate and addes babel.
 
-It includes:
+Notable:
 
 - @babel/node (babel-node)
-- @babel/register
+- @babel/register (node -r @babel/register)
 - @babel/preset-env (which is the successor to babel-preset-es2015)
 
 Currently doesn't include postcss - see babel_react.
@@ -18,6 +18,7 @@ Currently doesn't include postcss - see babel_react.
 - Switched to babel 7 (@babel/\*).
 - Removed legacy decorator babel plugin.
 - Replaced `babel-preset-es0215` with `@babel/preset-env`.
+- Linting with prettier (after merging upstream).
 
 ### Issues
 
