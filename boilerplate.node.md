@@ -20,6 +20,7 @@ Node boilerplate uses
   (taken from https://prettier.io/docs/en/eslint.html )
   `yarn run lint` works as expected with prettier.
 - Linted project with prettier.
+- Tidied up `CHANGELOG.md`.
 
 ## 2018-06-03
 
