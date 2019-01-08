@@ -2,23 +2,21 @@
   "name": "node-boilerplate",
   "version": "1.0.0",
   "description": "node boilerplate",
-  "main": "lib/index.js",
+  "main": "src/index.js",
   "repository": "tbc",
   "author": "Daniel Bush",
   "license": "MIT",
   "scripts": {
     "lint": "eslint src/ test/",
-    "start": "flow-node src/index.js",
+    "start": "node src/index.js",
     "check:env": "node -e \"require('dotenv-safe').load()\"",
-    "build": "rm -rf lib; flow-remove-types src/ --out-dir lib/",
     "test": "npm run test:unit",
     "test:unit": "mocha src test/unit",
     "test:watch": "npm run test:unit -- --watch",
     "version": "version-changelog CHANGELOG.md && changelog-verify CHANGELOG.md && git add CHANGELOG.md"
   },
   "dependencies": {
-    "dotenv-safe": "^6.0.0",
-    "eslint-plugin-flowtype": "^3.2.1"
+    "dotenv-safe": "^6.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.0",
@@ -28,7 +26,6 @@
     "dirty-chai": "^2.0.1",
     "eslint": "^4.3.0",
     "eslint-plugin-import": "^2.12.0",
-    "flow-remove-types": "^1.2.1",
     "mocha": "^5.0.0",
     "sinon": "^7.0.0",
     "sinon-chai": "^3.0.0",
