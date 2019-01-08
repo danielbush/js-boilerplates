@@ -3,15 +3,15 @@ module.exports = {
     browser: true,
     node: true,
     es6: true,
-    mocha: true
+    mocha: true,
   },
   parser: 'babel-eslint',
   parserOptions: {
     sourceType: 'module',
     ecmaFeatures: {
       modules: true,
-      jsx: true
-    }
+      jsx: true,
+    },
   },
   globals: {
     module: true,
@@ -20,16 +20,12 @@ module.exports = {
     expect: true,
     chai: true,
   },
-  plugins: [
-    'import',
-  ],
-  extends: [
-    'plugin:prettier/recommended'
-  ],
+  plugins: ['import'],
+  extends: ['plugin:prettier/recommended'],
   rules: {
-    'import/no-unresolved': [ 2, { commonjs: true, amd: true } ],
-    'no-undef': [ 2, { typeof: true } ],
-    'space-infix-ops': [ 'error' ],
+    'import/no-unresolved': [2, { commonjs: true, amd: true }],
+    'no-undef': [2, { typeof: true }],
+    'space-infix-ops': ['error'],
     // DISABLED - using prettier for these:
     // quotes: [ 2, 'single', 'avoid-escape' ],
     // 'keyword-spacing': 2,
@@ -44,5 +40,5 @@ module.exports = {
     // 'no-mixed-spaces-and-tabs': 2,
     // semi: [ 2, 'always' ],
     // strict: [ 2, 'safe' ],
-  }
+  },
 };
