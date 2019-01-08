@@ -1,12 +1,14 @@
 export class HelloWorld {
-  constructor () {}
-  hello () { console.log('hello world'); }
+  constructor() {}
+  hello() {
+    console.log('hello world');
+  }
 }
 
 const hello = new HelloWorld();
 hello.hello();
 
-export function* hellogen () {
+export function* hellogen() {
   yield 'hello world gen';
 }
 
