@@ -21,12 +21,10 @@ module.exports = {
     chai: true,
   },
   plugins: [
-    'flowtype',
     'import',
   ],
   extends: [
-    'plugin:flowtype/recommended'
-  ],
+ ],
   rules: {
     'import/no-unresolved': [ 2, { commonjs: true, amd: true } ],
     'space-infix-ops': [ 'error' ],
