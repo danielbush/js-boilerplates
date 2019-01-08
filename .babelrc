@@ -1,12 +1,10 @@
 {
   "presets": [
-    "es2015",
-    "flow"
+    "@babel/preset-env"
   ],
   "plugins": [
-    "transform-decorators-legacy",
-    "transform-object-rest-spread",
-    "transform-class-properties",
-    "transform-async-to-generator"
+    "@babel/proposal-object-rest-spread",
+    "@babel/proposal-class-properties",
+    "@babel/transform-async-to-generator"
   ]
 }
