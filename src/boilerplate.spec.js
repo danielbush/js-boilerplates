@@ -1,6 +1,4 @@
-
 describe('boilerplate', () => {
-
   let stub;
 
   beforeEach(() => {
