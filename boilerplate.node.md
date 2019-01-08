@@ -4,7 +4,6 @@ Node boilerplate uses
 
 - mocha for testing + sinon + chai/dirty-chai
 - eslint for linting
-- flow for optional typing
 
 ## 2019-01-09
 
