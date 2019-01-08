@@ -11,7 +11,7 @@ Node boilerplate uses
 - Removed docker configurations - added this on top of the boilerplate.
 - Added `.npmignore`.
 - Used `test/mocha.opts` for general mocha settings, simplified package.json.
-- Removed `flow` - see `node-flow-master` and removed `build` run-script.
+- Removed `flow` - see branch `node-flow-master` and removed `build` run-script.
 - `main` still points to `src/index.js` (but for flow, should have been `lib/index.js`).
 - Use `npm` instead of `yarn` - removed `yarn.lock`.
 - Upgraded to latest versions (`npm outdated`).
