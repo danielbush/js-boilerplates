@@ -8,9 +8,27 @@ Notable:
 
 - @babel/node (babel-node)
 - @babel/register (node -r @babel/register)
-- @babel/preset-env (which is the successor to babel-preset-es2015)
+- @babel/preset-env (which is the successor to babel-preset-X)
+- Doesn't include postcss - see babel_react.
 
-Currently doesn't include postcss - see babel_react.
+## 2019-01-11
+
+- Switched to @babel/polyfill in keeping with the other @babel updates - see last entry.
+- Use `import @babel/polyfill` in the entry point (src/index.js) - potentially we can
+  target this with babel-env's `useBuiltIns` to reduce the size - but see bug mentioned.
+- `.babelrc` -> `babel.config.js` as used in the latest docs
+  - Added notes about babel-env behaviour in `babel.config.js`
+  - Set babel-env minimum targets to IE 11 and Chrome 50 - very conservative.
+    This will trigger babel-env to use regenerator-runtime to transform async/await.
+    Setting it to just chrome 71 will NOT transform async/await.
+  - Ran into bug with `useBuiltIns: 'entry'` - it splits `import @babel/polyfill`
+    but doesn't require the regenerator-runtime properly (AFAICT)
+    - see https://github.com/babel/babel/issues/8829
+- Removed babel plugins: `@babel/proposal-object-rest-spread` (stage-4, babel-env
+  supports it), `@babel/transform-async-to-generator` (babel-env
+  supports this, no need to have it explicitly)
+- But, we keep these: `@babel/proposal-class-properties` (stage-3 atm, so babel-env
+  won't handle it), `@babel/plugin-proposal-export-default-from`.
 
 ## 2019-01-09
 
