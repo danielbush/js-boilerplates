@@ -28,6 +28,11 @@ Notable:
   require it to be `false` because of `babel-plugin-istanbul`.
   See https://github.com/istanbuljs/nyc/issues/434 .
   Gonna just let this sit for a bit.
+- FIX - we have to put `NODE_ENV=test` in "test:unit" run-script
+  so that babel can detect it and apply istanbul.
+  Removed it from `test/setup/unit.js`.
+  - Also seems to make `nyc --all` work now - it picks up src/index.js
+    which currently isn't required anywhere.
 
 ## 2019-01-11 - 4th session
 

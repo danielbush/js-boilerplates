@@ -1,5 +1,3 @@
-const func = require('./boilerplate');
-
 describe('boilerplate', () => {
   let stub;
 
