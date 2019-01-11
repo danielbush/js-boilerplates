@@ -19,6 +19,16 @@ Notable:
 - @babel/preset-env (which is the successor to babel-preset-X)
 - Doesn't include postcss - see babel_react.
 
+## 2019-01-11 - 5th session
+
+- Pulled node-master again.
+  This brought in `nyc --all` to list all source files in `src/`
+  in reports even if they're not required by a test file.
+  However, I think this requires `instrument: true` but we
+  require it to be `false` because of `babel-plugin-istanbul`.
+  See https://github.com/istanbuljs/nyc/issues/434 .
+  Gonna just let this sit for a bit.
+
 ## 2019-01-11 - 4th session
 
 - FIX mocha unit test setup - it should be
