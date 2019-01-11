@@ -37,6 +37,7 @@
     "@babel/register": "^7.0.0",
     "babel-eslint": "^10.0.0",
     "babel-loader": "^8.0.0",
+    "babel-plugin-istanbul": "^5.1.0",
     "chai": "^4.1.0",
     "chai-as-promised": "^7.1.1",
     "changelog-verify": "^1.0.4",

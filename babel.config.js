@@ -31,4 +31,9 @@ module.exports = {
     '@babel/proposal-class-properties',
     '@babel/plugin-proposal-export-default-from',
   ],
+  env: {
+    test: {
+      plugins: ['istanbul'],
+    },
+  },
 };

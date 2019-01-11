@@ -19,6 +19,19 @@ Notable:
 - @babel/preset-env (which is the successor to babel-preset-X)
 - Doesn't include postcss - see babel_react.
 
+## 2019-01-11 - 3rd session
+
+- Followed recommended setup for babel / nyc (istanbul)
+  - installed `babel-plugin-istanbul`
+  - in `.nycrc.json`
+    - set `instrument:false`, `sourceMap:false`
+    - added require for @babel/register - though probably not necessary
+  - added `lcov` reporter - see `coverage/` for html reports. NOTE
+    that these reports count line executions against the sourcemapped
+    original code in `src/` which is what we want.
+- Set `NODE_ENV` to `test` in `test/setup/unit.js` - may need to revisit
+  this. In `babel.config.js` we use `env: {}` to load `babel-plugin-istanbul`.
+
 ## 2019-01-11 - 2nd session
 
 - Pulled node-master which brought in nyc.

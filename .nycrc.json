@@ -1,4 +1,8 @@
 {
+  "require": ["@babel/register"],
+  "sourceMap": false,
+  "instrument": false,
   "include": ["src"],
-  "exclude": ["src/**/*.spec.js"]
+  "exclude": ["src/**/*.spec.js"],
+  "reporter": ["text", "lcov"]
 }
