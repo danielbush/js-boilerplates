@@ -2,7 +2,15 @@
 
 Upstream: node-master
 
-Babel boilerplate takes the node boilerplate and addes babel.
+Babel boilerplate takes the node boilerplate and adds babel.
+
+This setup buys us the following things in an es6+ environment:
+
+- linting (prettier + eslint),
+- tests (mocha),
+- test coverage (nyc),
+- building (to `lib/`)
+- cli execution (`npm run start`)
 
 Notable:
 
@@ -10,6 +18,30 @@ Notable:
 - @babel/register (node -r @babel/register)
 - @babel/preset-env (which is the successor to babel-preset-X)
 - Doesn't include postcss - see babel_react.
+
+## 2019-01-11 - 2nd session
+
+- Pulled node-master which brought in nyc.
+- nyc appears to run without any further tweaks.
+  I think because `mocha.opts` requires `@babel/register`, nyc
+  seems to be ok.
+- QUESTION: do we need to worry about source map settings for nyc?
+
+  - Looks like we should:
+    "nyc supports custom require hooks like @babel/register. nyc can
+    load the hooks for you, using the --require flag.
+
+    Source maps are used to map coverage information back to the
+    appropriate lines of the pre-transpiled code. You'll have to
+    configure your custom require hook to inline the source-map in
+    the transpiled code. For Babel that means setting the sourceMaps
+    option to inline."
+
+    - https://github.com/istanbuljs/nyc
+
+  - @babel/register can override babel configurations like this:
+    `require('@babel/register')({ ...babel configs... })`
+    So we might need to change how we load @babel/register.
 
 ## 2019-01-11
 
@@ -42,9 +74,12 @@ Notable:
 
 - Do we need to specify the other plugins eg class properties, object
   rest spread etc?
+  - Answered in the entry after this.
 - Need to configure / read up on `@babel/preset-env`.
+  - Done. It basic pulls in any stage-4+ transforms in for us.
 - Do we still need runtime generator? How does this play with
   @babel/preset-env?
+  - Answered in the entry after this.
 
 ## 2018-04-27
 
