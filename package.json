@@ -10,9 +10,8 @@
     "lint": "eslint src/ test/",
     "start": "node src/index.js",
     "check:env": "node -e \"require('dotenv-safe').load()\"",
-    "testhelp": "mocha --help",
     "test": "npm run test:unit",
-    "test:unit": "mocha --opts mocha.opts -r test/setup/unit src test/unit",
+    "test:unit": "nyc mocha --opts mocha.opts -r test/setup/unit src test/unit",
     "test:watch": "npm run test:unit -- --watch",
     "version": "version-changelog CHANGELOG.md && changelog-verify CHANGELOG.md && git add CHANGELOG.md"
   },
@@ -30,6 +29,7 @@
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-prettier": "^3.0.1",
     "mocha": "^5.0.0",
+    "nyc": "^13.1.0",
     "prettier": "^1.15.3",
     "sinon": "^7.0.0",
     "sinon-chai": "^3.0.0",
