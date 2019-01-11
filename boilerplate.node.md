@@ -5,6 +5,16 @@ Node boilerplate uses
 - mocha for testing + sinon + chai/dirty-chai
 - eslint for linting
 
+## 2019-01-11
+
+- Moved `test/mocha.opts` to `mocha.opts` using `--opts` option.
+- Added `nyc` to `test:unit` for test coverage (`instanbul` instrumentation).
+  Very easy setup because we aren't transpiling anything here.
+- Using `nyc mocha` - prints test stats after running the tests
+  which seems like a good default.
+- Using `.nycrc.json` for configuration.
+  - Use `exclude` option to ignore collocated `.spec.js` files in `src/`.
+
 ## 2019-01-09
 
 - Removed docker configurations - added this on top of the boilerplate.

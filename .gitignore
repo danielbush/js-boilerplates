@@ -5,3 +5,4 @@ lib/
 jspm_packages/
 .serverless
 *.log
+.nyc_output
