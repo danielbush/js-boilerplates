@@ -14,7 +14,7 @@
     "build": "rm -rf lib; babel -s --out-dir lib src",
     "start": "babel-node src/index.js",
     "test": "npm run test:unit",
-    "test:unit": "nyc mocha --opts mocha.opts -r test/setup/unit src/**/*.spec.js test/unit",
+    "test:unit": "nyc --all -- mocha --opts mocha.opts -r test/setup/unit src/**/*.spec.js test/unit",
     "test:watch": "npm run test:unit -- --watch",
     "webpack": "webpack --config webpack.config.js",
     "prepublish": "in-publish && { echo 'Prepublish:' && yarn run build; } || not-in-publish",
