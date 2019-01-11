@@ -19,6 +19,16 @@ Notable:
 - @babel/preset-env (which is the successor to babel-preset-X)
 - Doesn't include postcss - see babel_react.
 
+## 2019-01-11 - 4th session
+
+- FIX mocha unit test setup - it should be
+  `mocha ... src/**/*.spec.js test/unit`
+  NOT `mocha ... src test/unit`. With the latter, mocha
+  executes all files in `src/`. Then nyc will see that our code in
+  src/ got executed and reports on it with better test coverage than
+  it should have. (We don't actually test the boilerplate.js in
+  boilerplate.spec.js (yet)).
+
 ## 2019-01-11 - 3rd session
 
 - Followed recommended setup for babel / nyc (istanbul)
