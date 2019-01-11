@@ -5,6 +5,10 @@ Node boilerplate uses
 - mocha for testing + sinon + chai/dirty-chai
 - eslint for linting
 
+## 2019-01-11
+
+- Moved `test/mocha.opts` to `mocha.opts` using `--opts` option.
+
 ## 2019-01-09
 
 - Removed docker configurations - added this on top of the boilerplate.
