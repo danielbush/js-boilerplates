@@ -11,7 +11,7 @@
     "start": "node src/index.js",
     "check:env": "node -e \"require('dotenv-safe').load()\"",
     "test": "npm run test:unit",
-    "test:unit": "nyc mocha --opts mocha.opts -r test/setup/unit src test/unit",
+    "test:unit": "nyc --all -- mocha --opts mocha.opts -r test/setup/unit src/**/*.spec.js test/unit",
     "test:watch": "npm run test:unit -- --watch",
     "version": "version-changelog CHANGELOG.md && changelog-verify CHANGELOG.md && git add CHANGELOG.md"
   },
