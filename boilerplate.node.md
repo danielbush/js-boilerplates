@@ -3,7 +3,15 @@
 Node boilerplate uses
 
 - mocha for testing + sinon + chai/dirty-chai
-- eslint for linting
+- eslint + prettier for linting
+- nyc for test coverage
+
+## 2019-01-11 - 3rd session
+
+- Moved `NODE_ENV=test` into package.json `test:unit` run-script
+  because of issues with downstream babel project - see entry
+  from today in that project.
+  The issue probably doesn't affect us here but being consistent.
 
 ## 2019-01-11 - 2nd session
 
