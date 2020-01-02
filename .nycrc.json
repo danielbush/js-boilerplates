@@ -2,6 +2,6 @@
   "sourceMap": false,
   "instrument": true,
   "include": ["src"],
-  "exclude": ["src/**/*.spec.js", "test"],
+  "exclude": ["src/**/*.spec.[tj]s", "test"],
   "reporter": ["text", "lcov"]
 }

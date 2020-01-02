@@ -1,4 +1,8 @@
-const func = require('./boilerplate');
+import sinon from 'sinon';
+import { expect } from 'chai';
+import func from './boilerplate';
+
+const sandbox = sinon.createSandbox();
 
 describe('boilerplate', () => {
   let stub;
