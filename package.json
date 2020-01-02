@@ -9,14 +9,13 @@
   "scripts": {
     "lint": "eslint src/ test/",
     "start": "node src/index.js",
-    "check:env": "node -e \"require('dotenv-safe').load()\"",
     "test": "npm run test:unit",
     "test:unit": "NODE_ENV=test nyc --all -- mocha --opts mocha.opts -r test/setup/unit src/**/*.spec.js test/unit",
     "test:watch": "npm run test:unit -- --watch",
     "version": "version-changelog CHANGELOG.md && changelog-verify CHANGELOG.md && git add CHANGELOG.md"
   },
   "dependencies": {
-    "dotenv-safe": "^8.2.0"
+    "config": "^3.2.4"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
