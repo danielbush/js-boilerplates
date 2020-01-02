@@ -1,2 +1,2 @@
-// require('dotenv-safe').config();
+const config = require('config');
 const boilerplate = require('./boilerplate');

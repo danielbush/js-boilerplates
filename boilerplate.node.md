@@ -3,7 +3,53 @@
 Node boilerplate uses
 
 - mocha for testing + sinon + chai/dirty-chai
-- eslint for linting
+- eslint + prettier for linting
+- nyc for test coverage
+
+## 2020-01-02
+
+- Major upgrade for all deps needing it.
+- Switched to node-config https://github.com/lorenwest/node-config/wiki.
+  `config.get(...)` is used to get config values.
+  `config/default.js` has default config values.
+  Note: config.get will throw for missing values.
+- Removed
+  - dotenv-safe.
+  - run-script check:env
+- Removed nyc from `test:watch` - C-c during watch led to non-zero exit code and long npm message.
+
+## 2019-01-11 - 3rd session
+
+- Moved `NODE_ENV=test` into package.json `test:unit` run-script
+  because of issues with downstream babel project - see entry
+  from today in that project.
+  The issue probably doesn't affect us here but being consistent.
+
+## 2019-01-11 - 2nd session
+
+- Backported lcov for report coverage, and fix for mocha running all files in `src/`
+  which makes nyc report more than it should.
+- In `.nycrc.json`, set `instrument: true` and in `package.json` use
+  `nyc --all -- mocha ...` to get nyc to report on all non-test files
+  in src/. Without this, nyc won't report on files that aren't required
+  in your tests - obviously we want to see that some files have 0 coverage
+  because they're not tested at all. These are the include/exclude settings
+  I have at the moment (bit confused about how nyc handles these):
+  - "include": ["src"],
+  - "exclude": ["src/**/*.spec.js", "test"],
+  - I think however this may clash with babel downstream where
+    `instrument: false` is required for the `babel-plugin-istanbul`.
+  - see https://github.com/istanbuljs/nyc/issues/434 for similar issue.
+
+## 2019-01-11
+
+- Moved `test/mocha.opts` to `mocha.opts` using `--opts` option.
+- Added `nyc` to `test:unit` for test coverage (`instanbul` instrumentation).
+  Very easy setup because we aren't transpiling anything here.
+- Using `nyc mocha` - prints test stats after running the tests
+  which seems like a good default.
+- Using `.nycrc.json` for configuration.
+  - Use `exclude` option to ignore collocated `.spec.js` files in `src/`.
 
 ## 2019-01-09
 
