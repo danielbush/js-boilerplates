@@ -10,8 +10,9 @@
     "lint": "eslint src/ test/",
     "start": "node src/index.js",
     "test": "npm run test:unit",
-    "test:unit": "NODE_ENV=test nyc --all -- mocha --opts mocha.opts -r test/setup/unit src/**/*.spec.js test/unit",
-    "test:watch": "npm run test:unit -- --watch",
+    "test:unit:cmd": "NODE_ENV=test mocha --opts mocha.opts -r test/setup/unit src/**/*.spec.js test/unit",
+    "test:unit": "nyc --all -- npm run test:unit:cmd",
+    "test:watch": "npm run test:unit:cmd -- --watch",
     "version": "version-changelog CHANGELOG.md && changelog-verify CHANGELOG.md && git add CHANGELOG.md"
   },
   "dependencies": {
