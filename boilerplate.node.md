@@ -16,6 +16,7 @@ Node boilerplate uses
 - Removed
   - dotenv-safe.
   - run-script check:env
+- Removed nyc from `test:watch` - C-c during watch led to non-zero exit code and long npm message.
 
 ## 2019-01-11 - 3rd session
 
