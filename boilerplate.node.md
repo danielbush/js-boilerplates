@@ -9,6 +9,7 @@ Node boilerplate uses
 ## 2020-04-14
 
 - Major upgrade for all deps needing it.
+- Improve example test in boilerplate.spec.js.
 
 ## 2020-01-02
 

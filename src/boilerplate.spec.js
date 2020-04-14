@@ -1,12 +1,11 @@
 const func = require('./boilerplate');
 
 describe('boilerplate', () => {
-  let stub;
+  const stub = sandbox.stub();
 
   beforeEach(() => {
-    stub = sandbox.stub();
+    sandbox.reset();
   });
-  afterEach(() => sandbox.reset());
   after(() => sandbox.restore());
 
   it('should do basic example (boilerplate)', () => {
