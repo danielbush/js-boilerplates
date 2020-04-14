@@ -5,12 +5,11 @@ import func from './boilerplate';
 const sandbox = sinon.createSandbox();
 
 describe('boilerplate', () => {
-  let stub: sinon.SinonStub<any[], any>;
+  const stub: sinon.SinonStub<any[], any> = sandbox.stub();
 
   beforeEach(() => {
-    stub = sandbox.stub();
+    sandbox.reset();
   });
-  afterEach(() => sandbox.reset());
   after(() => sandbox.restore());
 
   it('should do basic example (boilerplate)', () => {
