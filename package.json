@@ -1,7 +1,7 @@
 {
-  "name": "node-boilerplate",
+  "name": "node-typescript-boilerplate",
   "version": "1.0.0",
-  "description": "node boilerplate",
+  "description": "node typescript boilerplate",
   "main": "src/index.js",
   "repository": "tbc",
   "author": "Daniel Bush",
