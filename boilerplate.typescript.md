@@ -6,6 +6,11 @@ Node typescript boilerplate uses
 - eslint + prettier for linting
 - nyc for test coverage
 
+## 2020-04-14
+
+- Merge latest from node-master
+- NOTE: https://github.com/Microsoft/TypeScript-Node-Starter#typescript--node is a good guide to follow.
+
 ## 2020-01-02
 
 - Started this project.
