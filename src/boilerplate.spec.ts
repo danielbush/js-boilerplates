@@ -5,7 +5,7 @@ import func from './boilerplate';
 const sandbox = sinon.createSandbox();
 
 describe('boilerplate', () => {
-  let stub;
+  let stub: sinon.SinonStub<any[], any>;
 
   beforeEach(() => {
     stub = sandbox.stub();
