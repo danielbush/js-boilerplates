@@ -6,6 +6,10 @@ Node boilerplate uses
 - eslint + prettier for linting
 - nyc for test coverage
 
+## 2020-04-14
+
+- Major upgrade for all deps needing it.
+
 ## 2020-01-02
 
 - Major upgrade for all deps needing it.
