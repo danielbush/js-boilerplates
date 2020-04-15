@@ -7,3 +7,4 @@ jspm_packages/
 *.log
 .nyc_output/
 coverage/
+config/local*

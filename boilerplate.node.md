@@ -6,6 +6,23 @@ Node boilerplate uses
 - eslint + prettier for linting
 - nyc for test coverage
 
+## 2020-04-14
+
+- Major upgrade for all deps needing it.
+- Improve example test in boilerplate.spec.js.
+
+## 2020-01-02
+
+- Major upgrade for all deps needing it.
+- Switched to node-config https://github.com/lorenwest/node-config/wiki.
+  `config.get(...)` is used to get config values.
+  `config/default.js` has default config values.
+  Note: config.get will throw for missing values.
+- Removed
+  - dotenv-safe.
+  - run-script check:env
+- Removed nyc from `test:watch` - C-c during watch led to non-zero exit code and long npm message.
+
 ## 2019-01-11 - 3rd session
 
 - Moved `NODE_ENV=test` into package.json `test:unit` run-script
