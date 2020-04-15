@@ -14,7 +14,7 @@
     "build": "rm -rf lib; babel -s --out-dir lib src",
     "start": "babel-node src/index.js",
     "test": "npm run test:unit",
-    "test:unit:cmd": "NODE_ENV=test nyc --all -- mocha --opts mocha.opts -r test/setup/unit src/**/*.spec.js test/unit",
+    "test:unit:cmd": "NODE_ENV=test nyc --all -- mocha -r test/setup/unit src/**/*.spec.js test/unit",
     "test:unit": "nyc --all -- npm run test:unit:cmd",
     "test:watch": "npm run test:unit:cmd -- --watch",
     "webpack": "webpack --config webpack.config.js",
