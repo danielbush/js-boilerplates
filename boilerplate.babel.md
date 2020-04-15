@@ -19,6 +19,12 @@ Notable:
 - @babel/preset-env (which is the successor to babel-preset-X)
 - Doesn't include postcss - see babel_react.
 
+## 2020-04-15
+
+- Merged latest node-master
+- npm update
+- Tried to replace babel-eslint with @babel/eslint\* but it's not ready yet, see version 8 babel.
+
 ## 2019-01-11 - 5th session
 
 - Pulled node-master again.
