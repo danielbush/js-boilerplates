@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint src/ test/",
-    "check": "yarn run lint",
+    "check": "npm run lint",
     "check:env": "node -e \"require('dotenv-safe').load()\"",
     "build": "rm -rf lib; babel -s --out-dir lib src",
     "start": "babel-node src/index.js",
@@ -16,7 +16,7 @@
     "test:unit:cmd": "NODE_ENV=test nyc --all -- mocha -r test/setup/unit src/**/*.spec.js test/unit",
     "test:unit": "nyc --all -- npm run test:unit:cmd",
     "test:watch": "npm run test:unit:cmd -- --watch",
-    "prepublish": "in-publish && { echo 'Prepublish:' && yarn run build; } || not-in-publish",
+    "prepublish": "in-publish && { echo 'Prepublish:' && npm run build; } || not-in-publish",
     "version": "version-changelog CHANGELOG.md && changelog-verify CHANGELOG.md && git add CHANGELOG.md"
   },
   "dependencies": {
