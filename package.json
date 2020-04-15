@@ -9,7 +9,6 @@
   "scripts": {
     "lint": "eslint src/ test/",
     "check": "npm run lint",
-    "check:env": "node -e \"require('dotenv-safe').load()\"",
     "help": "tsc --help",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
