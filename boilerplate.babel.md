@@ -11,12 +11,14 @@ This setup buys us the following things in an es6+ environment:
 - test coverage (nyc),
 - building (to `lib/`)
 - cli execution (`npm run start`)
+- optional typescript if we write `.ts` files
 
 Notable:
 
 - @babel/node (babel-node)
 - @babel/register (node -r @babel/register)
 - @babel/preset-env (which is the successor to babel-preset-X)
+- Includes optional typescript via @babel/preset-typescript
 - Doesn't include postcss - see babel_react.
 
 ## 2020-04-15
@@ -24,6 +26,10 @@ Notable:
 - Merged latest node-master
 - npm update
 - Tried to replace babel-eslint with @babel/eslint\* but it's not ready yet, see version 8 babel.
+- Added typescript via babel using https://github.com/microsoft/TypeScript-Babel-Starter as a guide.
+  - had to add `--extensions '.ts,.js'` for `babel-node` and `babel` (cli) to work; this
+    will build src/_.ts -> lib/_.js
+  - `build:types` generates `lib/*.d.ts` declaration files also
 
 ## 2019-01-11 - 5th session
 

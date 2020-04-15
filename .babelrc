@@ -1,14 +1,14 @@
-module.exports = {
-  presets: [
+{
+  "presets": [
+    "@babel/preset-typescript",
     [
-      '@babel/preset-env',
+      "@babel/preset-env",
       {
         // Minimum verisions to support:
-        targets: {
-          chrome: '50',
-          ie: '11',
+        "targets": {
+          "chrome": "50",
+          "ie": "11"
         },
-
         // USEBUILTINS
         //
         // 'entry'` will break up `import '@babel/polyfill'` into
@@ -21,19 +21,20 @@ module.exports = {
         // We could probalby install the runtime explicitly as a dep?
         //
         // Related: https://github.com/babel/babel/issues/8829
-
-        useBuiltIns: false, // see above note
-      },
-    ],
+        "useBuiltIns": false // see above note
+      }
+    ]
   ],
-  plugins: [
+  "plugins": [
     // Proposals probably aren't in babel-env, so we the ones we want here:
-    '@babel/proposal-class-properties',
-    '@babel/plugin-proposal-export-default-from',
+    "@babel/proposal-class-properties",
+    "@babel/plugin-proposal-export-default-from"
   ],
-  env: {
-    test: {
-      plugins: ['istanbul'],
-    },
-  },
-};
+  "env": {
+    "test": {
+      "plugins": [
+        "istanbul"
+      ]
+    }
+  }
+}

@@ -4,6 +4,10 @@
 // - object spread - which is now a standard
 // - etc
 
+import { tsvar } from './boilerplatets';
+
+console.log('tsvar:', tsvar);
+
 export class HelloWorld {
   constructor() {}
   hello() {
