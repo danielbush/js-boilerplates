@@ -12,13 +12,17 @@ This setup buys us the following things in an es6+ environment:
 - building (to `lib/`)
 - cli execution (`npm run start`)
 - optional typescript if we write `.ts` files
+  - this is different to a project that just uses straight typescript
+  - by going through babel we can support projects that already use babel
+    but which may want to start converting to typescript; this approach
+    is based on https://github.com/microsoft/TypeScript-Babel-Starter
 
 Notable:
 
 - @babel/node (babel-node)
 - @babel/register (node -r @babel/register)
 - @babel/preset-env (which is the successor to babel-preset-X)
-- Includes optional typescript via @babel/preset-typescript
+- @babel/preset-typescript - gives us (optional) typescript via babel
 - Doesn't include postcss - see babel_react.
 
 ## 2020-04-15
