@@ -9,21 +9,83 @@ This setup buys us the following things in an es6+ environment:
 - linting (prettier + eslint),
 - tests (mocha),
 - test coverage (nyc),
-- building (to `lib/`)
 - cli execution (`npm run start`)
+- babel compiles to `lib/*` and main entry point is lib/index.js
+  You can test a build in node: `node lib/index.js` which can be useful sometimes.
+- babel does several things: syntax (future js) and polyfills (future libs);
+  some syntax such as async/await or generators have both syntax and libraries
+  (eg regenerator-runtime); in order to transform new syntax into older syntax,
+  babel "helpers" may be used.
+  - SYNTAX: handled by `@babel/preset-env` "targets"; note: we use
+    this regardless of whether we are a library or an app; the issue is
+    whether and how to use preset-env's useBuiltIns option.
+  - POLYFILLS: library vs app
+    - `useBuiltIns`: 'entry'/'usage' (@babel/preset-env) is meant more for apps
+      and pollutes global scope; 'usage' may be a compromise for libs but needs
+      investigation; watch the `useBuiltIns` space for new options in the future.
+    - `@babel/plugin-transform-runtime` is meant more for libs and doesn't
+      pollute global scope but also can't target environments like preset-env
+      `@babel/plugin-transform-runtime` is a devdep for builds;
+      `@babel/runtime` is needed as a dep.
+      It does 3 things: regenerator-runtime, core-js and "normalizes" babel helpers.
+    - A 3rd way: "I don't think there's any "right answer" here; I lean on the
+      side of having final users provide all polyfills, and libraries should
+      document which ones they need."
+      - Just a note on this: if we use any syntax that is not covered by preset-env
+        ie something in `plugins` section of `.babelrc`, then we should probably include
+        this when building and publishing to npm.
+    - see https://github.com/babel/babel/issues/7267
 - optional typescript if we write `.ts` files
   - this is different to a project that just uses straight typescript
   - by going through babel we can support projects that already use babel
     but which may want to start converting to typescript; this approach
     is based on https://github.com/microsoft/TypeScript-Babel-Starter
+- there is no bundler (eg webpack, rollup etc). We may decide to have
+  webpack/react as a single template
 
 Notable:
 
 - @babel/node (babel-node)
 - @babel/register (node -r @babel/register)
-- @babel/preset-env (which is the successor to babel-preset-X)
 - @babel/preset-typescript - gives us (optional) typescript via babel
 - Doesn't include postcss - see babel_react.
+
+## 2020-04-16
+
+- Changes
+  - removed @babel/polyfill
+  - added core-js and regenerator-runtime as deps
+  - src/index.js imports core-js and regenerator-runtime
+  - @babel/preset-env useBuiltIns set to "entry" now, this will break up
+    core-js import in src/index.js based on preset-env's "targets" setting.
+  - added "browsers": "> 5%" as a preset-env target to test builds for more
+    recent browsers; this will not use regeneratorRuntime for async/await.
+  - added @babel/runtime as a dep for the possible case where we want to use
+    @babel/plugin-transform-runtime; it has no effect otherwise.
+- TODO: we need to consider a library build; either
+  - @babel/plugin-transform-runtime (may polyfill _everything_ which is extreme)
+  - useBuiltIns = false and assume consumers will uses @babel/present-env
+    with useBuiltIns = 'entry'|'usage'
+  - useBuiltIns = "usage" an option? See https://github.com/babel/babel/issues/7267 .
+  - https://2ality.com/2017/07/npm-packages-via-babel.html is old but interesting
+    - `main` vs `module`
+      - https://stackoverflow.com/questions/42708484/what-is-the-module-package-json-field-for
+    - `esm` vs `cjs`
+    - `targets` = `{node: current}` (@babel/preset-env)
+- Notes
+  - @babel/polyfill is deprecated from babel 7.4.
+    - We need to add corejs and regenerator-runtime directly.
+  - https://github.com/babel/babel/issues/10271#issuecomment-528379505
+    "useBuiltIns [@babel/present-env option] and
+    @babel/plugin-transform-runtime are mutually exclusive. Both are used to
+    add polyfills: the first adds them globally, the second one adds them
+    without attatching them to the global scope. You should decide which
+    behavior you want and stick with it."
+  - https://github.com/babel/babel/issues/7267
+    - "The useBuiltIns features is great but its usage may not be appropriate
+      for libraries because they affect the global scope.
+      @babel/plugin-transform-runtime approach is nice but it does not
+      currently supports targets like @babel/preset-env."
 
 ## 2020-04-15
 
