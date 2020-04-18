@@ -1,4 +1,4 @@
 module.exports = {
-  require: ['@babel/register', '@babel/polyfill'],
+  require: ['./test/register'],
   recursive: true,
 };

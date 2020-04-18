@@ -17,7 +17,7 @@
     "build:types": "tsc --emitDeclarationOnly",
     "start": "babel-node --extensions '.ts,.js' src/index.js",
     "test": "npm run test:unit",
-    "test:unit:cmd": "NODE_ENV=test -- mocha -r test/setup/unit src/**/*.spec.js test/unit",
+    "test:unit:cmd": "NODE_ENV=test mocha -r test/setup/unit src/**/*.spec.js test/unit",
     "test:unit": "nyc --all -- npm run test:unit:cmd",
     "test:watch": "npm run test:unit:cmd -- --watch",
     "prepublish": "in-publish && { echo 'Prepublish:' && npm run build; } || not-in-publish",
