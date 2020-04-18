@@ -4,12 +4,20 @@ Upstream: node-master
 
 Babel boilerplate takes the node boilerplate and adds babel.
 
+Try:
+
+```
+npm run dev
+npm run test
+npm run build && npm run start
+```
+
 This setup buys us the following things in an es6+ environment:
 
 - linting (prettier + eslint),
 - tests (mocha),
 - test coverage (nyc),
-- cli execution (`npm run start`)
+- cli execution (`npm run dev`)
 - babel compiles to `lib/*` and main entry point is lib/index.js
   You can test a build in node: `node lib/index.js` which can be useful sometimes.
 - babel does several things: syntax (future js) and polyfills (future libs);
@@ -64,6 +72,7 @@ Notable:
   We have to `import` `expect` in every file though.
   Maybe https://github.com/DefinitelyTyped/DefinitelyTyped/blob/b1cfdc9ab7257e7cab9238a4ae61758df96ee7ff/types/mocha/index.d.ts#L2856
   is why we don't have to do this for mocha's `describe` and `it`?
+- `npm run dev` runs dev environment; `npm run start` now run the build in `lib/`.
 
 ## 2020-04-16
 
