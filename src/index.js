@@ -3,4 +3,4 @@
 //import 'core-js';
 //import 'regenerator-runtime';
 
-import { HelloWorld } from './boilerplate';
+import { HelloWorld } from './boilerplate/boilerplate';
