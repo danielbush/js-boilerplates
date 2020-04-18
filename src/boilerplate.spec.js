@@ -1,3 +1,6 @@
+// Importing this so we see coverage stats from nyc:
+import './boilerplate';
+
 describe('boilerplate', () => {
   const stub = sandbox.stub();
 
