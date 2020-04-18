@@ -59,6 +59,11 @@ Notable:
 - `--extensions` for babel/babel-node includes `.tsx` and `.jsx` for completeness.
   Whilst we're unlikely to use the `x` versions for this template, it flows through
   to react-babel. Also `test/register.js` is already doing this.
+- Added boilerplate.spec.ts so we can write tests in typescript.
+  Had to add `mocha` to `types` in `tsconfig.json`.
+  We have to `import` `expect` in every file though.
+  Maybe https://github.com/DefinitelyTyped/DefinitelyTyped/blob/b1cfdc9ab7257e7cab9238a4ae61758df96ee7ff/types/mocha/index.d.ts#L2856
+  is why we don't have to do this for mocha's `describe` and `it`?
 
 ## 2020-04-16
 
