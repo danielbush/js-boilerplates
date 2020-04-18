@@ -50,6 +50,16 @@ Notable:
 - @babel/preset-typescript - gives us (optional) typescript via babel
 - Doesn't include postcss - see babel_react.
 
+## 2020-04-18
+
+- Added `test/register.js`. Backported this from babel-react which is a descendent
+  of this template.
+- Fixed double nyc call. Ensure we see nyc stats by importing the boilerplate.js file
+  into the boilerplate.spec.js file so that we can verify it works.
+- `--extensions` for babel/babel-node includes `.tsx` and `.jsx` for completeness.
+  Whilst we're unlikely to use the `x` versions for this template, it flows through
+  to react-babel. Also `test/register.js` is already doing this.
+
 ## 2020-04-16
 
 - Changes
