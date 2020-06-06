@@ -25,6 +25,7 @@ module.exports = {
   plugins: [],
   extends: [
     'eslint:recommended', // https://eslint.org/docs/rules/
+    'plugin:@typescript-eslint/recommended',
     // Disable conflicting eslint rules ( https://github.com/prettier/eslint-config-prettier ):
     'prettier',
     'plugin:prettier/recommended',
