@@ -7,7 +7,10 @@
   "author": "Daniel Bush",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint src/ test/",
+    "lint": "eslint --no-error-on-unmatched-pattern src/ test/",
+    "check:types": "tsc --noEmit",
+    "check:types:watch": "npm run check:types -- --watch",
+    "check": "npm run lint && npm run check:types",
     "start": "tsc && node build/index.js",
     "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
     "test": "npm run test:unit",
