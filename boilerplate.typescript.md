@@ -10,6 +10,10 @@ Node typescript boilerplate uses
 
 ## 2020-06-07
 
+- Added `npm run check` and `npm run check:types`.
+  - `eslint src/ test/` failed on test/ even though there _is_ a ts file in there.
+    Not sure what is going on. Using `--no-error-on-unmatched-pattern` for the moment.
+    https://stackoverflow.com/questions/54543063/how-can-i-suppress-the-no-files-matching-the-pattern-message-in-eslint
 - It's worth reading https://www.npmjs.com/package/@typescript-eslint/parser as it appears
   to be the basis for using eslint with typescript including eslint rules that could only
   apply to ts
