@@ -5,6 +5,7 @@ module.exports = {
     es6: true,
     mocha: true,
   },
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     sourceType: 'module',
     // Setting this and using '2020' seems to allow us to resolve .ts/.tsx files.
