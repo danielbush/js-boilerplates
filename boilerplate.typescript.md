@@ -8,6 +8,15 @@ Node typescript boilerplate uses
 - eslint + prettier for linting
 - nyc for test coverage
 
+## 2020-06-07
+
+- It's worth reading https://www.npmjs.com/package/@typescript-eslint/parser as it appears
+  to be the basis for using eslint with typescript including eslint rules that could only
+  apply to ts
+- @typescript-eslint is the companion for this parser with ts rules. Trying to keep things
+  simple by extending the recommended set.
+  https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin
+
 ## 2020-04-14
 
 - Merge latest from node-master
