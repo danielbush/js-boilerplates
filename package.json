@@ -11,7 +11,7 @@
     "start": "tsc && node build/index.js",
     "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
     "test": "npm run test:unit",
-    "test:unit:cmd": "NODE_ENV=test mocha --opts mocha.opts -r ts-node/register -r test/setup/unit.ts src/**/*.spec.[jt]s test/unit",
+    "test:unit:cmd": "NODE_ENV=test mocha --opts mocha.opts -r ts-node/register -r test/setup/unit.ts src/*.spec.[jt]s src/**/*.spec.[jt]s test/unit",
     "test:unit": "nyc --all -- npm run test:unit:cmd",
     "test:watch": "npm run test:unit:cmd -- --watch",
     "version": "version-changelog CHANGELOG.md && changelog-verify CHANGELOG.md && git add CHANGELOG.md"
@@ -27,7 +27,6 @@
     "@types/mocha": "^5.2.7",
     "@types/sinon": "^7.5.1",
     "@types/sinon-chai": "^3.2.3",
-    "babel-eslint": "^10.1.0",
     "chai": "^4.1.0",
     "chai-as-promised": "^7.1.1",
     "changelog-verify": "^1.0.4",
