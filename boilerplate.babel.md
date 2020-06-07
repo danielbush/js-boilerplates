@@ -65,6 +65,7 @@ Notable:
   eslintrc.js.
 - We're also using `babel-eslint` for the parser. Might have been doing this before
   but our parent (node/master) doesn't because it doesn't use babel.
+- `npm run check` runs linting and type checking; `npm run check:types` runs ts type checks.
 
 ## 2020-04-18
 
