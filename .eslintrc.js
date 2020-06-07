@@ -5,6 +5,7 @@ module.exports = {
     es6: true,
     mocha: true,
   },
+  parser: 'babel-eslint',
   parserOptions: {
     sourceType: 'module',
     // Setting this and using '2020' seems to allow us to resolve .ts/.tsx files.
@@ -29,6 +30,7 @@ module.exports = {
     'plugin:prettier/recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
+    'plugin:import/typescript',
   ],
   rules: {
     'space-infix-ops': ['error'],
