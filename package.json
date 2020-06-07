@@ -9,7 +9,7 @@
   "scripts": {
     "lint": "eslint src/ test/",
     "check:types": "tsc --noEmit",
-    "check:types:watch": "npm run type-check -- --watch",
+    "check:types:watch": "npm run check:types -- --watch",
     "check": "npm run lint && npm run check:types",
     "build": "rm -rf lib; npm run build:types && npm run build:js",
     "build:js": "babel --extensions '.ts,.tsx,.js,.jsx' -s --out-dir lib src",
