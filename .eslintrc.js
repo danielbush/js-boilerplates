@@ -5,9 +5,10 @@ module.exports = {
     es6: true,
     mocha: true,
   },
-  parser: 'babel-eslint',
   parserOptions: {
     sourceType: 'module',
+    // Setting this and using '2020' seems to allow us to resolve .ts/.tsx files.
+    ecmaVersion: 2020,
     ecmaFeatures: {
       modules: true,
       jsx: true,
@@ -20,25 +21,18 @@ module.exports = {
     expect: true,
     chai: true,
   },
-  plugins: ['import'],
-  extends: ['plugin:prettier/recommended'],
+  plugins: [],
+  extends: [
+    'eslint:recommended', // https://eslint.org/docs/rules/
+    // Disable conflicting eslint rules ( https://github.com/prettier/eslint-config-prettier ):
+    'prettier',
+    'plugin:prettier/recommended',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+  ],
   rules: {
-    'import/no-unresolved': [2, { commonjs: true, amd: true }],
-    'no-undef': [2, { typeof: true }],
     'space-infix-ops': ['error'],
-    // DISABLED - using prettier for these:
-    // quotes: [ 2, 'single', 'avoid-escape' ],
-    // 'keyword-spacing': 2,
-    // 'linebreak-style': [ 2, 'unix' ],
-    // indent: [ 2, 2, { SwitchCase: 1, VariableDeclarator: { var: 2, let: 2, const: 3 } } ],
-    // 'no-trailing-spaces': 2,
-    // 'object-curly-spacing': [ 2, 'always' ],
-    // 'comma-spacing': [ 2, { before: false, after: true } ],
-    // 'space-before-blocks': [ 2, { functions: 'always', keywords: 'always', classes: 'always' } ],
-    // 'space-before-function-paren': 2,
-    // 'no-spaced-func': 2,
-    // 'no-mixed-spaces-and-tabs': 2,
-    // semi: [ 2, 'always' ],
-    // strict: [ 2, 'safe' ],
+    // Flag bad 'requires', not just 'imports':
+    'import/no-unresolved': [2, { commonjs: true, amd: true }],
   },
 };

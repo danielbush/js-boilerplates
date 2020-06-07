@@ -17,7 +17,7 @@
     "dev": "babel-node --extensions '.ts,.tsx,.js,.jsx' src/index.js",
     "start": "node lib/index.js",
     "test": "npm run test:unit",
-    "test:unit:cmd": "NODE_ENV=test mocha -r test/setup/unit src/**/*.spec.ts{,x} src/**/*.spec.js{,x} test/unit",
+    "test:unit:cmd": "NODE_ENV=test mocha -r test/setup/unit src/*.spec.[jt]s{,x} src/**/*.spec.[jt]s{,x} test/unit",
     "test:unit": "nyc --all -- npm run test:unit:cmd",
     "test:watch": "npm run test:unit:cmd -- --watch",
     "prepublish": "in-publish && { echo 'Prepublish:' && npm run build; } || not-in-publish",
