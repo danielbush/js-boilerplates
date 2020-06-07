@@ -58,6 +58,14 @@ Notable:
 - @babel/preset-typescript - gives us (optional) typescript via babel
 - Doesn't include postcss - see babel_react.
 
+## 2020-06-07
+
+- We need to install `@typescript-eslint/parser` so that
+  `eslint-plugin-import` can handle ts files. We don't need to use it in
+  eslintrc.js.
+- We're also using `babel-eslint` for the parser. Might have been doing this before
+  but our parent (node/master) doesn't because it doesn't use babel.
+
 ## 2020-04-18
 
 - Added `test/register.js`. Backported this from babel-react which is a descendent
