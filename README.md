@@ -15,7 +15,7 @@ Here's some example output for `git branch`:
 ```
 node/babel/master
 node/babel/react/master
-node/babel/react/patch/emotion
+node/babel/react/emotion/patch
 node/master
 node/ts/master
 ```
@@ -38,13 +38,13 @@ recommended thing to do, just for sake of demonstrating how we use git.
 Similarly `node/babel/master` is "node + babel" and could be the basis for
 things we use babel with eg react, webpack etc.
 
-Now consider `node/babel/react/patch/emotion`. This is not a master branch
-but a "patch". We treat `node/babel/react/patch/emotion` as a smallish set of
+Now consider `node/babel/react/emotion/patch`. This is not a master branch
+but a "patch". We treat `node/babel/react/emotion/patch` as a smallish set of
 commits that apply on top of `node/babel/react/master` that add emotion to
 our react boilerplate. Whenever we update `node/babel/react/master` we rebase
 our patch:
 
-    git checkout node/babel/react/patch/emotion
+    git checkout node/babel/react/emotion/patch
     git rebase node/babel/react/master
 
 Rebasing means you'll lose history as you make adjustments. But this is just
