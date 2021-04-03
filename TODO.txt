@@ -1,0 +1,10 @@
+
+# TODO
+
+- clarify merge squash technique when updating boilerplate
+  % Apr-2021
+  % if we record the last boilerplate commit hash we can 
+    1. make an update branch
+    2. do a merge --ours <last-commit-hash>
+    3. do a squash merge of the boilerplate
+    4. do a squash merge of update branch back into master
