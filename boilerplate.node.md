@@ -2,14 +2,15 @@
 
 Node boilerplate uses
 
-- mocha for testing + sinon + chai/dirty-chai
+- jest for testing
 - eslint + prettier for linting
 - nyc for test coverage
 
-## 2021-04-03
+## 2021-04-03 - switch to jest
 
 - Major upgrade for all deps needing it.
 - Replace mocha.opts and package.json args with .mocharc.js (probably because of mocha major bump).
+- Made jest the default testing library.  `node/other/mocha` contains mocha/chai/sinon.  I'm just keeping it for reference.
 
 ## 2020-04-14
 
