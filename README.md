@@ -1,3 +1,5 @@
+# js-boilerplates
+
 ## What
 
 A system for managing templates for node and browser-based apps. It's more of
@@ -65,7 +67,7 @@ Now you can merge and fix conflicts:
 If you don't want to merge in large boilerplate history into your project,
 you could do a squash merge:
 
-    git merge --squash --allow-unrelated-histories boilerplate/your/branch`
+    git merge --squash --allow-unrelated-histories boilerplate/your/branch
 
 ### Using a template on a new project
 
