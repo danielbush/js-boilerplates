@@ -17,18 +17,18 @@
     "version": "version-changelog CHANGELOG.md && changelog-verify CHANGELOG.md && git add CHANGELOG.md"
   },
   "dependencies": {
-    "config": "^3.3.1"
+    "config": "^3.3.6"
   },
   "devDependencies": {
     "@types/jest": "^25.2.1",
     "changelog-verify": "^1.0.4",
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.10.1",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-prettier": "^3.1.3",
+    "eslint": "^7.23.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.3.1",
     "jest": "^25.3.0",
     "nyc": "^15.1.0",
-    "prettier": "^2.0.0",
+    "prettier": "^2.2.1",
     "version-changelog": "^3.0.0"
   }
 }

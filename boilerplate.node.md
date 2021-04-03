@@ -6,6 +6,11 @@ Node boilerplate uses
 - eslint + prettier for linting
 - nyc for test coverage
 
+## 2021-04-03
+
+- Major upgrade for all deps needing it.
+- Replace mocha.opts and package.json args with .mocharc.js (probably because of mocha major bump).
+
 ## 2020-04-14
 
 - Major upgrade for all deps needing it.
@@ -14,7 +19,7 @@ Node boilerplate uses
 ## 2020-01-02
 
 - Major upgrade for all deps needing it.
-- Switched to node-config https://github.com/lorenwest/node-config/wiki.
+- Switched to node-config <https://github.com/lorenwest/node-config/wiki>.
   `config.get(...)` is used to get config values.
   `config/default.js` has default config values.
   Note: config.get will throw for missing values.
@@ -44,7 +49,7 @@ Node boilerplate uses
   - "exclude": ["src/**/*.spec.js", "test"],
   - I think however this may clash with babel downstream where
     `instrument: false` is required for the `babel-plugin-istanbul`.
-  - see https://github.com/istanbuljs/nyc/issues/434 for similar issue.
+  - see <https://github.com/istanbuljs/nyc/issues/434> for similar issue.
 
 ## 2019-01-11
 
@@ -67,7 +72,7 @@ Node boilerplate uses
 - Upgraded to latest versions (`npm outdated`).
 - Added `.prettierrc`, and use `plugin:prettier/recommended` in eslint.
   Packages: `prettier`, `eslint-config-prettier`, `eslint-plugin-prettier`.
-  (taken from https://prettier.io/docs/en/eslint.html )
+  (taken from <https://prettier.io/docs/en/eslint.html> )
   `yarn run lint` works as expected with prettier.
 - Linted project with prettier.
 - Tidied up `CHANGELOG.md`.
@@ -148,4 +153,4 @@ Node boilerplate uses
 ## 2017-08-06
 
 - Added collocated tests which seem to be popular eg `src/file.js` and `src/file.spec.js`.
-  Also see: https://github.com/mochajs/mocha/issues/1577 .
+  Also see: <https://github.com/mochajs/mocha/issues/1577> .
