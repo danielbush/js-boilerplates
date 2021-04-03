@@ -10,7 +10,7 @@
     "lint": "eslint src/ test/",
     "start": "node src/index.js",
     "test": "npm run test:unit",
-    "test:unit:cmd": "NODE_ENV=test mocha --opts mocha.opts -r test/setup/unit src/*.spec.js src/**/*.spec.js test/unit",
+    "test:unit:cmd": "NODE_ENV=test mocha ",
     "test:unit": "nyc --all -- npm run test:unit:cmd",
     "test:watch": "npm run test:unit:cmd -- --watch",
     "version": "version-changelog CHANGELOG.md && changelog-verify CHANGELOG.md && git add CHANGELOG.md"
@@ -23,14 +23,14 @@
     "chai-as-promised": "^7.1.1",
     "changelog-verify": "^1.0.4",
     "dirty-chai": "^2.0.1",
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.15.0",
+    "eslint": "^7.23.0",
+    "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.3.1",
-    "mocha": "^7.2.0",
+    "mocha": "^8.3.2",
     "nyc": "^15.1.0",
     "prettier": "^2.2.1",
-    "sinon": "^9.2.4",
+    "sinon": "^10.0.0",
     "sinon-chai": "^3.6.0",
     "version-changelog": "^3.0.0"
   }
