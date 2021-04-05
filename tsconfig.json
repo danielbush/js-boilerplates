@@ -1,9 +1,10 @@
 {
     "compilerOptions": {
         "allowJs": true,
+        "checkJs": true,
         "target": "es6",
         "module": "commonjs",
-        "rootDir": "src",
+        "rootDir": "./",
         "outDir": "build",
         "sourceMap": true,
         "resolveJsonModule": true,

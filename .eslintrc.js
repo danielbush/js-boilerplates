@@ -20,7 +20,6 @@ module.exports = {
     fetch: true,
     sandbox: true,
     expect: true,
-    chai: true,
   },
   plugins: [],
   extends: [
