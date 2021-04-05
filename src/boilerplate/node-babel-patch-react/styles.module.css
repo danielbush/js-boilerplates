@@ -1,0 +1,13 @@
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/:root */
+:root {
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties */
+  --red: #d33;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: var(--red);
+}
