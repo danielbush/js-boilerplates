@@ -15,8 +15,7 @@ npm run build && npm run start
 This setup buys us the following things in an es6+ environment:
 
 - linting (prettier + eslint),
-- tests (mocha),
-- test coverage (nyc),
+- tests (jest) - coverage,
 - cli execution (`npm run dev`)
 - babel compiles to `lib/*` and main entry point is lib/index.js
   You can test a build in node: `node lib/index.js` which can be useful sometimes.
@@ -62,6 +61,7 @@ Notable:
 
 - Updated all deps except mocha et al
 - Merged `node/master`
+  - now using jest
 
 ## 2020-06-07
 
