@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     node: true,
     es6: true,
-    mocha: true,
+    jest: true,
   },
   parserOptions: {
     sourceType: 'module',
@@ -19,7 +19,6 @@ module.exports = {
     fetch: true,
     sandbox: true,
     expect: true,
-    chai: true,
   },
   plugins: [],
   extends: [

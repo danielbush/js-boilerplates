@@ -7,6 +7,7 @@
   "author": "Daniel Bush",
   "license": "MIT",
   "scripts": {
+    "boilerplate": "node src/boilerplate/index.js",
     "lint": "eslint src/ test/",
     "start": "node src/index.js",
     "test": "npm run test:unit",
