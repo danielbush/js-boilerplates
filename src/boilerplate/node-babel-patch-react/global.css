@@ -1,0 +1,12 @@
+body {
+  background-color: lightblue;
+}
+
+/* 
+There should be a div in the boilerplate that has this class. If we use css
+modules, this class will get transformed and will not work. This file should
+NOT be transformed with css modules.
+*/
+.some-global-class {
+  background-color: lightyellow;
+}

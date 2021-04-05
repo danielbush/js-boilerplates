@@ -5,6 +5,7 @@ build/
 jspm_packages/
 .serverless
 *.log
+.tmp
 .nyc_output/
 coverage/
 config/local*
