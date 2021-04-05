@@ -7,6 +7,6 @@ describe('boilerplate', () => {
   it('should shallow mount div', async () => {
     render(<HelloWorld name="foo" />);
 
-    expect(await screen.findAllByText((el) => el.trim())).toHaveLength(4);
+    expect(await screen.findAllByText((el) => el.trim())).toHaveLength(7);
   });
 });

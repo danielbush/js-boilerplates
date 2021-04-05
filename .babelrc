@@ -15,7 +15,10 @@
         "useBuiltIns": "entry",
         "corejs": 3
       }
-    ]
+    ],
+    // babel-preset-css-prop will generate code with 'import' statements.
+    // It must be run BEFORE @babel/preset-env.
+    "@emotion/babel-preset-css-prop",
   ],
   "plugins": [
     // Proposals probably aren't in babel-env, so we the ones we want here:
