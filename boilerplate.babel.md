@@ -61,6 +61,7 @@ Notable:
 ## 2021-04-05
 
 - Updated all deps except mocha et al
+- Merged `node/master`
 
 ## 2020-06-07
 
