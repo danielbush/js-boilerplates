@@ -7,7 +7,8 @@
   "author": "Daniel Bush",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint src/ test/",
+    "boilerplate": "node src/boilerplate/node-babel-master/index.js",
+    "lint": "eslint --no-error-on-unmatched-pattern src/ test/",
     "check:types": "tsc --noEmit",
     "check:types:watch": "npm run check:types -- --watch",
     "check": "npm run lint && npm run check:types",

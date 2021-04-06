@@ -4,10 +4,22 @@ Node boilerplate uses
 
 - jest for testing (includes in-built mocking and test coverage)
 - eslint + prettier for linting
+- smoke test
+  - `npm run lint`
+  - `npm run boilerlpate` to check boilerlpate
+  - `npm test` will run tests including boilerplate tests
+
+## 2021-04-07
+
+- Moving all content into `src/boilerplate/node-master/` including this file.
+
+## 2021-04-06
+
+- Move boilerplate code into `boilerplate/node-master` with `npm run boilerplate`.
 
 ## 2021-04-03 - switch to jest
 
-- Made jest the default testing library.  `node/other/mocha` contains mocha/chai/sinon.  I'm just keeping it for reference.
+- Made jest the default testing library.  `node/patch/mocha` contains mocha/chai/sinon.  I'm just keeping it for reference.
 - Removed nyc because jest has `--coverage` etc
 
 ## 2021-04-03
