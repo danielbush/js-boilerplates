@@ -4,12 +4,14 @@ Node boilerplate uses
 
 - jest for testing (includes in-built mocking and test coverage)
 - eslint + prettier for linting
-- `npm run boilerlpate` to check boilerlpate
-- `npm test` will run tests including boilerplate tests
+- smoke test
+  - `npm run lint`
+  - `npm run boilerlpate` to check boilerlpate
+  - `npm test` will run tests including boilerplate tests
 
 ## 2021-04-06
 
-- Move boilerplate code into `boilerplate/` with `npm run boilerplate`.
+- Move boilerplate code into `boilerplate/node-master` with `npm run boilerplate`.
 
 ## 2021-04-03 - switch to jest
 

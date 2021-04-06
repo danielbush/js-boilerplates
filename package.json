@@ -7,8 +7,8 @@
   "author": "Daniel Bush",
   "license": "MIT",
   "scripts": {
-    "boilerplate": "node src/boilerplate/index.js",
-    "lint": "eslint src/ test/",
+    "boilerplate": "node src/boilerplate/node-master/index.js",
+    "lint": "eslint --no-error-on-unmatched-pattern src/ test/",
     "start": "node src/index.js",
     "test": "npm run test:unit",
     "jest:help": "jest --help",
