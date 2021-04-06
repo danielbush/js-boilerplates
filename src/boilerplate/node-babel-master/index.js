@@ -3,4 +3,16 @@
 //import 'core-js';
 //import 'regenerator-runtime';
 
-import { HelloWorld } from './boilerplate';
+import { tsvar, HelloWorld, hellogen, helloPromise } from './boilerplate';
+
+console.log('ts var:', tsvar);
+
+for (const msg of hellogen()) {
+  console.log(msg);
+}
+
+helloPromise();
+
+const hello = new HelloWorld();
+hello.hello();
+hello.helloClassProperty();

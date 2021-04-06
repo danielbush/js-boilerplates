@@ -4,10 +4,7 @@
 // - object spread - which is now a standard
 // - etc
 
-import { tsvar } from './boilerplatets';
-
-console.log('tsvar:', tsvar);
-
+export { tsvar } from './boilerplatets';
 export class HelloWorld {
   constructor() {}
   hello() {
@@ -18,21 +15,14 @@ export class HelloWorld {
   };
 }
 
-const hello = new HelloWorld();
-hello.hello();
-hello.helloClassProperty();
 
 export function* hellogen() {
   yield 'hello world gen';
 }
 
-for (const msg of hellogen()) {
-  console.log(msg);
-}
 
 export const helloPromise = async () => {
   console.log(await Promise.resolve('hello promise'));
 };
-helloPromise();
 
 export default 'hello world';
