@@ -7,7 +7,8 @@
   "author": "Daniel Bush",
   "license": "MIT",
   "scripts": {
-    "boilerplate": "node src/boilerplate/node-babel-master/index.js",
+    "boilerplate": "npm run build && node lib/boilerplate/node-babel-master/index.js",
+    "boilerplate:dev": "babel-node --extensions '.ts,.tsx,.js,.jsx' src/boilerplate/node-babel-master/index.js",
     "lint": "eslint --no-error-on-unmatched-pattern src/ test/",
     "check:types": "tsc --noEmit",
     "check:types:watch": "npm run check:types -- --watch",

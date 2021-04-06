@@ -4,12 +4,13 @@ Upstream: node-master
 
 Babel boilerplate takes the node boilerplate and adds babel.
 
-Try:
+Smoke test
 
 ```
-npm run dev
+npm run boilerplate
+npm run boilerplate:dev
+npm run lint
 npm run test
-npm run build && npm run start
 ```
 
 This setup buys us the following things in an es6+ environment:
@@ -47,8 +48,7 @@ This setup buys us the following things in an es6+ environment:
   - by going through babel we can support projects that already use babel
     but which may want to start converting to typescript; this approach
     is based on <https://github.com/microsoft/TypeScript-Babel-Starter>
-- there is no bundler (eg webpack, rollup etc). We may decide to have
-  webpack/react as a single template
+- there is no bundler (eg webpack, rollup etc).
 
 Notable:
 
@@ -56,6 +56,10 @@ Notable:
 - @babel/register (node -r @babel/register)
 - @babel/preset-typescript - gives us (optional) typescript via babel
 - Doesn't include postcss - see babel_react.
+
+## 2021-04-07
+
+- Consolidated boilerplate files into `src/boilerplate/node-babel-master/`.
 
 ## 2021-04-05
 
