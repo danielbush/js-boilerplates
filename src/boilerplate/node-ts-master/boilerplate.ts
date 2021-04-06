@@ -1,2 +1,2 @@
 import config from 'config';
-export default () => console.log('hello world', config.get('PORT'));
+export default (): void => console.log('hello world', config.get('PORT'));

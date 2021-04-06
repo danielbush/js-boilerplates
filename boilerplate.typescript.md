@@ -8,24 +8,20 @@ Node typescript boilerplate uses
 - eslint + prettier for linting
 - smoke test
   - npm test
+  - npm run lint  # tests eslint is working
   - npm run boilerplate
   - npm run boilerplate:dev
 
 ## 2021-04-06
 
 - put boilerplate in `boilerplate/node-ts-master/` and updated `npm run boilerplate`
-
-## 2021-04-03
-
-- merge latest `node/master`
-  - brings in `jest` and `ts-jest` to run tests
 - set `rootDir` in tsconfig to `./`
   - this allows us to keep config/ files as *.js
   - and not have issues with ts-node
   - if we use config/*.ts compile code will fail to import
   - if we use config/*.js ts-node gets uppity because it's outside `rootDir = "src"`
   - to check the set up works run both `npm run boilerplate` and `npm run boilerplate:dev` since one is using `tsc` and the other is using `ts-node`.
-  - as a result, tsc will build ot `build/src/*` not `build/*`
+  - as a result, tsc will build to `build/src/*` not `build/*`
     - this feels a little hacky but resolves issues with `config` and `tsc`
   - related
     - <https://stackoverflow.com/questions/58095165/emit-skipped-when-parsing-config-typescript-files>
@@ -33,6 +29,22 @@ Node typescript boilerplate uses
   - it wants to live in the root of the project
   - I think this is fine for packaging (npm) and building images (servers)
   - but be aware that we build all code in src/ to build/
+- needed to add the following to eslint so that `npm run eslint` can resolve *.ts files, see <https://stackoverflow.com/questions/55198502/using-eslint-with-typescript-unable-to-resolve-path-to-module>:
+    settings: {
+      'import/resolver': {
+        node: {
+          extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        },
+      },
+    },
+- `npm run lint` was choking on boilerplate for node/master - `@typescript-eslint/no-var-requires` rule
+  - added `.eslintignore` to ignore this boilerplate
+  - (also move this boilerplate into src/boilerplate/node-master - I'll update `node/master` retroactively)
+
+## 2021-04-03
+
+- merge latest `node/master`
+  - brings in `jest` and `ts-jest` to run tests
 
 ## 2020-06-07
 

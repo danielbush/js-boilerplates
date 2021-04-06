@@ -21,6 +21,13 @@ module.exports = {
     sandbox: true,
     expect: true,
   },
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    },
+  },
   plugins: [],
   extends: [
     'eslint:recommended', // https://eslint.org/docs/rules/
