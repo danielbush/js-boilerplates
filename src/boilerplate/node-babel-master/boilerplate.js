@@ -15,11 +15,9 @@ export class HelloWorld {
   };
 }
 
-
 export function* hellogen() {
   yield 'hello world gen';
 }
-
 
 export const helloPromise = async () => {
   console.log(await Promise.resolve('hello promise'));
