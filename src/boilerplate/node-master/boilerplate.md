@@ -9,6 +9,10 @@ Node boilerplate uses
   - `npm run boilerlpate` to check boilerlpate
   - `npm test` will run tests including boilerplate tests
 
+## 2021-04-07
+
+- Moving all content into `src/boilerplate/node-master/` including this file.
+
 ## 2021-04-06
 
 - Move boilerplate code into `boilerplate/node-master` with `npm run boilerplate`.
