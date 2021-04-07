@@ -9,13 +9,22 @@
   "scripts": {
     "boilerplate": "npm run build && node build/src/boilerplate/node-ts-master/index.js",
     "boilerplate:dev": "nodemon --watch 'src/**/*.ts' --exec ts-node src/boilerplate/node-ts-master/index.ts",
+    "boilerplate:test": "cd src/boilerplate/node-ts-patch-express-serverless && ./test.sh",
     "lint": "eslint --no-error-on-unmatched-pattern src/ test/",
     "check": "npm run lint && npm run check:types",
     "check:types": "tsc --noEmit",
     "check:types:watch": "npm run check:types -- --watch",
-    "build": "rm -rf build && tsc",
     "start": "node build/src/index.js",
     "dev": "nodemon --watch 'src/**/*.ts' --exec ts-node src/index.ts",
+    "create:ecr": "node scripts/create-ecr.js",
+    "login:ecr": "node scripts/login-ecr.js",
+    "build": "rm -rf build && tsc",
+    "docker:build": "node scripts/build.js",
+    "docker:start": "node scripts/start.js",
+    "docker:ping": "node scripts/ping.js",
+    "docker:deploy:ecr": "node scripts/deploy-ecr.js",
+    "predeploy:boilerplate": "cd cdk/constructs/hello && npm run build && npm run test",
+    "deploy:boilerplate": "cd cdk/stacks/boilerplate && npm run build && npm run test && cdk deploy",
     "jest:help": "jest --help",
     "test": "npm run test:unit",
     "test:unit": "npm run test:unit:cmd -- --coverage",
@@ -25,6 +34,7 @@
     "version": "version-changelog CHANGELOG.md && changelog-verify CHANGELOG.md && git add CHANGELOG.md"
   },
   "dependencies": {
+    "@vendia/serverless-express": "^4.3.4",
     "config": "^3.3.6",
     "cors": "^2.8.5",
     "debug": "^4.3.1",
@@ -36,6 +46,7 @@
     "winston": "^3.3.3"
   },
   "devDependencies": {
+    "@types/aws-lambda": "^8.10.73",
     "@types/config": "0.0.38",
     "@types/cors": "^2.8.10",
     "@types/errorhandler": "^1.5.0",
