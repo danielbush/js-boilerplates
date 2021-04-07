@@ -9,4 +9,6 @@ module.exports = {
 
   // If we want file logging:
   LOG_FILE: null,
+
+  GRAPHIQL: true,
 };

@@ -1,3 +1,4 @@
+import config from 'config';
 import express from 'express';
 import morgan from './morgan';
 import logger from './logger/logger';
@@ -9,6 +10,9 @@ app.use(morgan);
 // Put your routes here:
 app.use('/ping', routes.ping);
 app.use('/health', routes.health);
+app.use('/graphql', routes.graphqlExample);
+if (config.get('GRAPHIQL'))
+  app.use('/playground', routes.playground({ endpoint: '/graphql' }));
 app.use('/bad', routes.bad);
 
 // Special routes
