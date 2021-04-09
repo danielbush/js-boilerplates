@@ -12,7 +12,9 @@ exploring different setups and technologies and combinations of these.
 Note this `master` branch is practically empty.
 To use or modify the templates you need to checkout one of the other branches.
 
-The current branch topology looks like this:
+### Long-running branches
+
+The current branch topology for long running branches is:
 
 ```
 node/master
@@ -20,18 +22,20 @@ node/ts/master
 node/babel/master
 ```
 
-In this example configuration, `node/master` is our base template for vanilla
-node projects.
+`node/master` is a base template for vanilla node projects.
 
-A branch like `node/babel/master` is long-running branch. It's based on
-`node/master`. `node/ts/master` is a template for vanilla typescript
-projects; it extends `node/master`.
+`node/babel/master` is based on `node/master` and tries to represent a canonical babel setup.
+`node/ts/master` similarly tries to represent a ts setup.
+
+Jest is used for testing.
 
 Periodically we might change or improve `node/master` and when we do, we'll
 merge the latest version into `node/ts/master` and `node/babel/master`.
 
+```sh
     git checkout node/ts/master
     git merge node/master
+```
 
 ### Patch branches
 
@@ -51,28 +55,34 @@ I may tag `node/babel/patch/react` before and after recreating it. This keeps
 a history of previous patch branches and allows for better boilerplate
 updates.
 
-Recreating patch branches requires reasonable git knowledge: you may want to use rebase, cherry-pick etc.
+Assuming you keep the patch to a **single commit**, you can use something like this:
 
+```sh
+  git tag last node/ts/patch/express # in case you get lost
+  git rebase --onto node/ts/master node/ts/patch/express~ node/ts/patch/express
+  # Reoslve conflicts 
+  git rebase --continue
+  git tag -d last
+```
+
+It may also be possible to apply more than 1 patch to a project eg graphql and next js might be patches to your express boilerplate.
+But all of this could probably be done with long-running branches and probably more easily.
 I'm not sure patch branches offer a lot for the effort required to maintain them.
 The main attaction for me is that all the changes are enapsulated in a single commit.
 Git topology remains simple because we have only a few long running branches and a bunch of patches on top of them.
 
 ### Review
 
-We can use github draft p/rs to review the changes between branches and their derivative branches:
+We can use github compare links or draft p/rs to review changes.
+Example:
+
+- <https://github.com/danielbush/js-boilerplates/compare/node/ts/master...node/ts/patch/express>
+
+NOTE: Github p/rs don't always update esp if forced merges are done.
 
 - <https://github.com/danielbush/js-boilerplates/pull/1/files>
 - <https://github.com/danielbush/js-boilerplates/pull/2/files>
 - <https://github.com/danielbush/js-boilerplates/pull/3/files>
-
-### Example
-
-If we want to investigate a typescript-only react setup (no babel), we could
-put it under `node/ts/react/master`. This is not necessarily a great or
-recommended thing to do, just for sake of demonstrating how we use git.
-
-Similarly `node/babel/master` is "node + babel" and could be the basis for
-things we use babel with eg react, webpack etc.
 
 ## Adding boilerpate
 
