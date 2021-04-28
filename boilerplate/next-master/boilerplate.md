@@ -66,6 +66,8 @@ The main commands:
 
 - typescript - <https://github.com/vercel/next.js/blob/canary/examples/with-typescript/pages/about.tsx>
 - prettier / eslint setup - use node-master?
+- use pages/api/boilerplate in boilerplate example
+- can we use pages/api/boilerplate for getServerSideProps()?
 - combine nextjs with graphql
   - this seems like an obvious combination
 - explore using auth0 (eg cognito)
