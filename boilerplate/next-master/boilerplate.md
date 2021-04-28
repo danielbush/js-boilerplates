@@ -12,6 +12,11 @@ Nextjs boilerplate
   - `pages/api/*` maps to `/api/*` routes
   - see <https://nextjs.org/docs/api-routes/introduction>
   - we have a `req` and `res` which map to objects in nodejs `http` module
+- Nextjs has a curious way to add typescript.
+    You create an empty tsconfig.json file and do `yarn dev` which fails with some instructions.
+    The instructions involve installing some @types/ packages.
+    Run `yarn dev` again and tsconfig.json is populated and next-env.d.ts is created.
+    See <https://nextjs.org/docs/basic-features/typescript> .
 
 ## Synopsis
 
