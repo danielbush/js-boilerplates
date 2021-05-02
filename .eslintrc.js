@@ -5,7 +5,7 @@ module.exports = {
     es6: true,
     jest: true,
   },
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
   parserOptions: {
     sourceType: 'module',
     // Setting this and using '2020' seems to allow us to resolve .ts/.tsx files.
@@ -22,7 +22,7 @@ module.exports = {
     expect: true,
     jest: true,
   },
-  plugins: [],
+  plugins: ['@babel'],
   extends: [
     'eslint:recommended', // https://eslint.org/docs/rules/
     // Disable conflicting eslint rules ( https://github.com/prettier/eslint-config-prettier ):

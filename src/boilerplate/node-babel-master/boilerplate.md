@@ -6,7 +6,7 @@ Babel boilerplate takes the node boilerplate and adds babel.
 
 Smoke test
 
-```
+```sh
 npm run boilerplate
 npm run boilerplate:dev
 npm run lint
@@ -48,6 +48,7 @@ This setup buys us the following things in an es6+ environment:
   - by going through babel we can support projects that already use babel
     but which may want to start converting to typescript; this approach
     is based on <https://github.com/microsoft/TypeScript-Babel-Starter>
+  - eslint uses @babel/eslint-parser which can handle both js and ts
 - there is no bundler (eg webpack, rollup etc).
 
 Notable:
@@ -55,7 +56,15 @@ Notable:
 - @babel/node (babel-node)
 - @babel/register (node -r @babel/register)
 - @babel/preset-typescript - gives us (optional) typescript via babel
-- Doesn't include postcss - see babel_react.
+
+## 2021-05-02
+
+- Updated to `@babel/eslint-parser`.  We were using outdated `babel-eslint`
+  package; does not handle `as` type assertion.
+  - See <https://babel.dev/blog/2020/07/13/the-state-of-babel-eslint#the-future>
+    from <https://github.com/babel/babel-eslint/issues/813>
+- Added `@babel/eslint-plugin` - see <https://www.npmjs.com/package/@babel/eslint-plugin>
+  - Requires: `"plugins": ["@babel"]` in `.eslintrc.js`
 
 ## 2021-04-07
 
