@@ -18,8 +18,6 @@ module.exports = {
   globals: {
     module: true,
     fetch: true,
-    sandbox: true,
-    expect: true,
     jest: true,
   },
   plugins: ['@babel'],
@@ -37,4 +35,29 @@ module.exports = {
     // Flag bad 'requires', not just 'imports':
     'import/no-unresolved': [2, { commonjs: true, amd: true }],
   },
+  overrides: [
+    {
+      files: ['**/*.ts', '**/*.tsx'],
+      env: { browser: true, node: true, es6: true, jest: true },
+      extends: [
+        // Replicating the above, do we need to?
+        'eslint:recommended',
+        'prettier',
+        'plugin:prettier/recommended',
+        // These are specific to ts:
+        'plugin:@typescript-eslint/eslint-recommended',
+        'plugin:@typescript-eslint/recommended',
+      ],
+      parser: '@typescript-eslint/parser',
+      parserOptions: {
+        sourceType: 'module',
+        ecmaVersion: 2020,
+        ecmaFeatures: { jsx: true, modules: true },
+      },
+      plugins: ['@typescript-eslint'],
+      rules: {
+        // '@typescript-eslint/no-explicit-any': 0,
+      },
+    },
+  ],
 };

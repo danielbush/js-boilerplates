@@ -4,15 +4,6 @@ Upstream: node-master
 
 Babel boilerplate takes the node boilerplate and adds babel.
 
-Smoke test
-
-```sh
-npm run boilerplate
-npm run boilerplate:dev
-npm run lint
-npm run test
-```
-
 This setup buys us the following things in an es6+ environment:
 
 - linting (prettier + eslint),
@@ -48,14 +39,24 @@ This setup buys us the following things in an es6+ environment:
   - by going through babel we can support projects that already use babel
     but which may want to start converting to typescript; this approach
     is based on <https://github.com/microsoft/TypeScript-Babel-Starter>
-  - eslint uses @babel/eslint-parser which can handle both js and ts
+  - we use eslint's `overrides` to use `@typescript-eslint/parser` instead of
+    `@babel/eslint-parser` for ts files to take advantage of the ts eslint rule
+    eco-system
 - there is no bundler (eg webpack, rollup etc).
-
-Notable:
-
 - @babel/node (babel-node)
-- @babel/register (node -r @babel/register)
-- @babel/preset-typescript - gives us (optional) typescript via babel
+  - @babel/register (node -r @babel/register)
+  - @babel/preset-typescript - gives us (optional) typescript via babel
+
+## Smoke test
+
+```sh
+npm run boilerplate
+npm run boilerplate:dev
+npm run lint
+npm run test
+```
+
+To test eslint for typescript, try creating an explicity any: `const foo: any = 123;`.  You should see something like: `Unexpected any. Specify a different type. @typescript-eslint/no-explicit-any`
 
 ## 2021-05-02
 
@@ -65,6 +66,18 @@ Notable:
     from <https://github.com/babel/babel-eslint/issues/813>
 - Added `@babel/eslint-plugin` - see <https://www.npmjs.com/package/@babel/eslint-plugin>
   - Requires: `"plugins": ["@babel"]` in `.eslintrc.js`
+- Use `@typescript-eslint` for eslint and ts as an override because `@babel/eslint-parser` does not handling linting for ts-specific things (it can parse ts however).
+  - <https://github.com/typescript-eslint/typescript-eslint#what-about-babel-and-babeleslint-parser>
+    "The key trade-off can be summarized as @babel/eslint-parser supports
+    additional syntax which TypeScript itself does not, but typescript-eslint
+    supports creating rules based on type information, which is not available to
+    babel because there is no type-checker."
+  - "Because they are separate projects powered by different underlying tooling,
+    they are currently not intended to be used together."
+    - ths solution? - `overrides` in eslint
+      - <https://stackoverflow.com/questions/62953124/configure-eslint-to-parse-ts-and-tsx-as-typescript-and-js-and-jsx-as-ecmascr>
+      - and <https://stackoverflow.com/questions/57597142/how-to-run-typescript-eslint-on-ts-files-and-eslint-on-js-files-in-the-same-pr>
+    - <https://eslint.org/docs/user-guide/configuring/configuration-files#how-do-overrides-work>
 
 ## 2021-04-07
 

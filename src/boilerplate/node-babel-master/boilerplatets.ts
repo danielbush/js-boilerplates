@@ -1,3 +1,3 @@
-const tsvar: string = 'bar';
+const tsvar = 'bar';
 
 export { tsvar };
