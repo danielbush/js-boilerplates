@@ -134,7 +134,7 @@ node/babel/master
 `node/babel/master` is based on `node/master` and tries to represent a canonical babel setup.
 `node/ts/master` similarly tries to represent a ts setup.
 
-Jest is used for testing.
+GJest is used for testing.
 
 Periodically we might change or improve `node/master` and when we do, we'll
 merge the latest version into `node/ts/master` and `node/babel/master`.
@@ -197,7 +197,7 @@ NOTE: Github p/rs don't always update esp if forced merges are done.
 Arranging branch names in a directory/tree structure works really well in git.
 They will usually list in order:
 
-    git branch
+    git branch --remotes
 
 Get a graph
 
