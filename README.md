@@ -14,45 +14,77 @@ So why have an additional boilerplate library?
 
 - To play with new tooling or understand it better
 - If you want to customise CRA you have to eject and mess around
+- You may have a bespoke next.js setup based on express not next.js
 - You may have additional setups that work on top of CRA or next.js
+- You aren't using CRA or next.js and there are no established boilerplates for your chosen stack
 
-## Adding boilerpate
-
-### Adding a boilerplate on an existing project
-
-Add `boilerplate` as a remote to your project and `fetch` it:
-
-    git add remote boilerplate ...
-    git fetch boilerplate
-
-Now you can merge and fix conflicts:
-
-    git merge --allow-unrelated-histories boilerplate/your/branch
-
-If you don't want to merge in large boilerplate history into your project,
-you could do a squash merge:
-
-    git merge --squash --allow-unrelated-histories boilerplate/your/branch
+## Adding boilerplate
 
 ### Starting a project using a boilerplate
 
 Suppose we start a new js or ts project.
 
-We can either do an update like above. Or we can clone the boilerplate to
-avoid having to use --allow-unrelated-histories. Then rename origin to
-boilerplate and set up our own master branch and origin.
+If you want to keep the boilerplate history in your project:
 
-## Updating boilerpate
+```sh
+    git init # set up empty project
+    git remote add boilerplate url-for-your-boilerplate
+    git fetch boilerplate
+    git reset --hard boilerplate/your/branch
+    echo "tag-or-commit" >.boilerplate
+    # Commit...
+```
+
+If you don't want to see the boilerplate history in your project:
+
+```sh
+    git init # set up empty project
+    git remote add boilerplate url-for-your-boilerplate
+    git fetch boilerplate
+    git merge --squash --allow-unrelated-histories boilerplate/your/branch
+    echo "tag-or-commit" >.boilerplate
+    # Commit...
+```
+
+### Adding a boilerplate on an existing project
+
+Add `boilerplate` as a remote to your project and `fetch` it:
+
+```sh
+    git add remote boilerplate ...
+    git fetch boilerplate
+```
+
+Now you can merge and fix conflicts:
+
+```sh
+    git merge --allow-unrelated-histories boilerplate/your/branch
+```
+
+If you don't want to merge in large boilerplate history into your project,
+you could do a squash merge:
+
+```sh
+    git merge --squash --allow-unrelated-histories boilerplate/your/branch
+```
+
+Add the commit or tag for the boilerplate:
+
+```sh
+    echo "tag-or-commit" >.boilerplate
+```
+
+## Updating the boilerplate for a downstream project
 
 **TODO: this is a work in progress - the instructions below may not work as intended.**
 
 We suppose `origin` is your project's origin and `boilerplate` is the origin
 for a boilerplate like this project.
 
-Suppose our code is based on some boilerplate branch with tag `my-boilerpate-v1.2.3`.
-Suppose we want to update to `my-boilerpate-v2.1.0`.
+Suppose our code is based on some boilerplate branch with tag `my-boilerplate-v1.2.3`.
+Suppose we want to update to `my-boilerplate-v2.1.0`.
 
-We need to record the tag ie `my-boilerpate-v1.2.3` of the current
+We need to record the tag ie `my-boilerplate-v1.2.3` of the current
 boilerplate somewhere eg in package.json or in a file eg `.boilerplate`.
 Then update it to the new tag as part of the boilerplate update process.
 
@@ -80,8 +112,8 @@ that use a patch branch boilerplate. We use `--squash` to hide the history.
 ```sh
     git checkout -b update
     git checkout -b tmp
-    # We get `my-boilerpate-v1.2.3` from `.boilerplate`, then:
-    git merge --allow-unrelated-histories -s ours my-boilerpate-v1.2.3 # this brings CURRENT boilerplate history (back) in
+    # We get `my-boilerplate-v1.2.3` from `.boilerplate`, then:
+    git merge --allow-unrelated-histories -s ours my-boilerplate-v1.2.3 # this brings CURRENT boilerplate history (back) in
     git merge my-boilerplate-v2.1.0 # now merge LATEST boilerplate in
     git checkout update
     git merge --squash tmp # hoping this removes all boilerplate history at this point
@@ -103,8 +135,8 @@ Possibly another way:
 
 ```sh
     git checkout -b update
-    # We get `my-boilerpate-v1.2.3` from `.boilerplate`, then:
-    git diff -p my-boilerpate-v1.2.3..my-boilerplate-v2.1.0 >/tmp/patch
+    # We get `my-boilerplate-v1.2.3` from `.boilerplate`, then:
+    git diff -p my-boilerplate-v1.2.3..my-boilerplate-v2.1.0 >/tmp/patch
     # TODO: not sure how well patching handles conflicts or if we can use --3way in this case:
     git apply --3way /tmp/patch # conflict markers - not sure we can do this
     git apply --reject /tmp/patch # create .rej files
@@ -114,7 +146,7 @@ Possibly another way:
 
 TODO: definitely not tested yet!
 
-## Maintenance of Boilerplates
+## Boilerplate Maintenance
 
 Note this `master` branch is practically empty.
 To use or modify the templates you need to checkout one of the other branches.
@@ -192,7 +224,7 @@ NOTE: Github p/rs don't always update esp if forced merges are done.
 - <https://github.com/danielbush/js-boilerplates/pull/2/files>
 - <https://github.com/danielbush/js-boilerplates/pull/3/files>
 
-## Viewing boilerplate lineage in git
+### Viewing boilerplate lineage in git
 
 Arranging branch names in a directory/tree structure works really well in git.
 They will usually list in order:
