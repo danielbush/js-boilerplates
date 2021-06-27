@@ -35,15 +35,17 @@ If you want to keep the boilerplate history in your project:
     # Commit...
 ```
 
-If you don't want to see the boilerplate history in your project:
+If you don't want to see the boilerplate history in your project - this is using a real example:
 
 ```sh
     git init # set up empty project
-    git remote add boilerplate url-for-your-boilerplate
+    git commit -m 'feat: first commit' # commit something to make a first commit - add a file
+    git remote add boilerplate git@github.com:danielbush/js-boilerplates.git
     git fetch boilerplate
-    git merge --squash --allow-unrelated-histories boilerplate/your/branch
+    git merge --squash --allow-unrelated-histories boilerplate/node/ts/master # better if boilerplate/node/ts/master were a tag eg node-ts-master-1.0.0
+    git commit -m 'chore: update boilerplate'
     echo "tag-or-commit" >.boilerplate
-    # Commit...
+    git add . && git commit -m 'chore: boilerplate version'
 ```
 
 ### Adding a boilerplate on an existing project
